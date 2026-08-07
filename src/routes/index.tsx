@@ -473,7 +473,7 @@ function Index() {
               </button>
 
               {/* Sidebar: Services & Stats */}
-               <div className="w-full md:w-80 bg-slate-950 p-8 md:p-12 flex flex-col justify-between text-white relative overflow-hidden border-r border-white/5">
+               <div className="hidden md:flex md:w-80 bg-slate-950 p-12 flex-col justify-between text-white relative overflow-hidden border-r border-white/5">
                  <div className="absolute inset-0 opacity-20">
                    <img src={bookingBgAsset.url} className="w-full h-full object-cover grayscale brightness-50" alt="Sidebar BG" />
                  </div>
@@ -528,8 +528,8 @@ function Index() {
                   >
                     <div className="mb-10 text-center md:text-left">
                       <img src={logoAsset.url} alt="Logo" className="w-16 h-16 mx-auto md:mx-0 mb-4 md:hidden" />
-                      <h2 className="text-3xl md:text-4xl font-black italic uppercase tracking-tighter mb-2">Escolha sua Experiência</h2>
-                      <p className="text-slate-400 font-medium text-sm md:text-base">O primeiro passo para o futuro começa com a escolha certa.</p>
+                      <h2 className="text-3xl md:text-4xl font-black italic uppercase tracking-tighter mb-2">Selecione a Categoria</h2>
+                      <p className="text-slate-400 font-medium text-sm md:text-base">Escolha abaixo para iniciar seu agendamento.</p>
                     </div>
 
                     <div className="flex md:grid md:grid-cols-2 gap-4 overflow-x-auto md:overflow-x-visible pb-6 md:pb-0 snap-x snap-mandatory scrollbar-hide -mx-2 px-2 md:mx-0 md:px-0">
