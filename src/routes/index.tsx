@@ -82,7 +82,7 @@ function Index() {
             </button>
           </div>
           
-          <button className="md:hidden text-white">
+          <button className="md:hidden text-white" onClick={() => setIsBookingOpen(true)}>
             <Menu className="w-6 h-6" />
           </button>
         </div>
