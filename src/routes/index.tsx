@@ -199,19 +199,6 @@ function Index() {
               ))}
             </div>
           </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="absolute inset-0 bg-blue-600 rounded-[3rem] rotate-3 opacity-20 blur-2xl"></div>
-            <img 
-              src={ballAsset.url} 
-              className="relative z-10 w-full aspect-[4/5] object-cover rounded-[3rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" 
-              alt="Atleta em treinamento" 
-            />
-          </motion.div>
         </div>
 
         {/* Galeria Horizontal (Mobile) / Grade 3D (Desktop) */}
