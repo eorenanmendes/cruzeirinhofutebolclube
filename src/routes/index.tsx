@@ -61,19 +61,20 @@ function Index() {
       </nav>
       
       {/* Hero */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center text-center p-6 bg-slate-950 text-white overflow-hidden py-32">
+      <section className="relative min-h-screen flex flex-col items-start justify-center p-6 md:p-24 bg-slate-950 text-white overflow-hidden py-32">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=2000" 
             className="w-full h-full object-cover opacity-30"
             alt="Soccer Field"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent" />
         </div>
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-10 max-w-4xl"
+          className="relative z-10 max-w-4xl text-left"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -89,20 +90,20 @@ function Index() {
               Alta Performance.
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-            Metodologia exclusiva de ensino focada no desenvolvimento técnico e humano para jovens atletas de alto rendimento.
+          <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-2xl font-light leading-relaxed">
+            O futuro do futebol começa aqui. Metodologia exclusiva de ensino focada no desenvolvimento técnico e humano para jovens atletas de alto rendimento.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-start items-center">
             <motion.button 
               whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(37,99,235,0.4)" }}
               whileTap={{ scale: 0.95 }}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-full font-black uppercase tracking-tighter text-lg transition shadow-xl"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-full font-black uppercase tracking-tighter text-lg transition shadow-xl w-full sm:w-auto text-center"
             >
               Agendar Aula Experimental
             </motion.button>
             <motion.button 
               whileHover={{ backgroundColor: "rgba(255,255,255,0.1)" }}
-              className="bg-transparent border-2 border-white text-white px-10 py-5 rounded-full font-black uppercase tracking-tighter text-lg transition"
+              className="bg-transparent border-2 border-white text-white px-10 py-5 rounded-full font-black uppercase tracking-tighter text-lg transition w-full sm:w-auto text-center"
             >
               Conhecer CT
             </motion.button>
