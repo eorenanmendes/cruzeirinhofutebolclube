@@ -325,15 +325,32 @@ function Index() {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-green-500 hover:bg-green-600 text-white px-12 py-6 rounded-2xl font-black uppercase tracking-widest text-xl transition-all flex items-center gap-4 mx-auto shadow-[0_0_40px_rgba(34,197,94,0.3)]"
+            className="bg-green-600 hover:bg-green-700 text-white px-12 py-6 rounded-2xl font-black uppercase tracking-widest text-xl transition-all flex items-center gap-4 mx-auto shadow-[0_0_40px_rgba(34,197,94,0.3)]"
           >
-            <MessageCircle className="w-8 h-8" /> Falar com Consultor no WhatsApp
+            <MessageCircle className="w-8 h-8" /> Chamar no WhatsApp
           </motion.button>
-          <div className="mt-12 text-slate-500 font-black uppercase tracking-widest text-xs">
-            © 2026 GERAÇÃO CRAQUES • TODOS OS DIREITOS RESERVADOS
-          </div>
         </div>
       </section>
+
+      {/* Final Footer */}
+      <footer className="py-12 px-6 bg-black border-t border-white/5">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex items-center gap-3">
+            <img src={logoAsset.url} alt="Cruzeirinho Logo" className="w-10 h-10" />
+            <div className="flex flex-col text-left">
+              <span className="text-lg font-black italic uppercase tracking-tighter leading-none">Cruzeirinho</span>
+              <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-blue-500">Futebol Clube</span>
+            </div>
+          </div>
+          <div className="text-slate-500 text-[10px] font-black uppercase tracking-widest">
+            © 2026 Cruzeirinho Futebol Clube. Todos os direitos reservados.
+          </div>
+          <div className="flex gap-6">
+            <Mail className="w-5 h-5 text-slate-500 hover:text-blue-500 cursor-pointer transition-colors" />
+            <MessageCircle className="w-5 h-5 text-slate-500 hover:text-blue-500 cursor-pointer transition-colors" />
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
