@@ -12,7 +12,7 @@ import img3Asset from "@/assets/image-3.png.asset.json";
 import img4Asset from "@/assets/image-4.png.asset.json";
 import img5Asset from "@/assets/image-5.png.asset.json";
 import imgWebpAsset from "@/assets/image.webp.asset.json";
-import bookingBgAsset from "@/assets/image-6.png.asset.json";
+import bookingBgAsset from "@/assets/team-group.png.asset.json";
 
 const schema = z.object({
   name: z.string().min(2),
@@ -460,12 +460,11 @@ function Index() {
               <div className="w-full md:w-80 bg-blue-600 p-8 md:p-12 flex flex-col justify-between text-white relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
                 <div className="relative z-10">
-                  <div className="flex items-center gap-3 mb-12">
-                    <img src={logoAsset.url} alt="Logo" className="w-12 h-12 brightness-0 invert" />
-                    <span className="text-xl font-black italic uppercase tracking-tighter">Booking</span>
+                  <div className="flex flex-col items-center gap-4 mb-12">
+                    <img src={logoAsset.url} alt="Logo" className="w-24 h-24 brightness-0 invert" />
                   </div>
                   
-                  <h3 className="text-3xl font-black italic uppercase tracking-tighter mb-8 leading-tight">Escolha sua <br />experiência</h3>
+                  <h3 className="text-3xl font-black italic uppercase tracking-tighter mb-8 leading-tight text-center md:text-left">Escolha sua <br />experiência</h3>
                   
                   <div className="space-y-6">
                     {services.map((s, i) => (
@@ -496,7 +495,7 @@ function Index() {
                 <div className="absolute inset-0 z-0 overflow-hidden">
                   <img 
                     src={bookingBgAsset.url} 
-                    className="w-full h-full object-cover opacity-20 grayscale brightness-50"
+                    className="w-full h-full object-cover opacity-40 grayscale-0 brightness-75"
                     alt="Background"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900/40 to-slate-900/90" />
