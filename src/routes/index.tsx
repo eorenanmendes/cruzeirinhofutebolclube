@@ -1,7 +1,7 @@
 import * as React from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, MapPin, Trophy, Users, Calendar, MessageCircle, Mail, Menu, X, ChevronRight, Star, Instagram } from "lucide-react";
+import { ArrowRight, MapPin, Trophy, Users, Calendar, MessageCircle, Mail, Menu, X, ChevronRight, Star } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -398,7 +398,7 @@ function Index() {
                   className="flex items-center gap-4 group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-blue-600 transition-all">
-                    <Instagram className="w-5 h-5 text-white" />
+                    <MessageCircle className="w-5 h-5 text-white" />
                   </div>
                   <div>
                     <p className="text-sm font-black uppercase tracking-widest leading-none mb-1 group-hover:text-blue-500">Escolinha Oficial</p>
@@ -412,7 +412,7 @@ function Index() {
                   className="flex items-center gap-4 group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-blue-600 transition-all">
-                    <Instagram className="w-5 h-5 text-white" />
+                    <MessageCircle className="w-5 h-5 text-white" />
                   </div>
                   <div>
                     <p className="text-sm font-black uppercase tracking-widest leading-none mb-1 group-hover:text-blue-500">Projeto Social</p>
