@@ -8,6 +8,7 @@ import { z } from "zod";
 import { toast, Toaster } from "sonner";
 import logoAsset from "@/assets/logo.asset.json";
 import img2Asset from "@/assets/image-2.png.asset.json";
+import img2Asset from "@/assets/image-2.png.asset.json";
 import img3Asset from "@/assets/image-3.png.asset.json";
 import img4Asset from "@/assets/image-4.png.asset.json";
 import img5Asset from "@/assets/image-5.png.asset.json";
