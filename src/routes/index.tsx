@@ -580,6 +580,7 @@ function Index() {
                     </form>
                   </motion.div>
                 )}
+                </div>
               </div>
             </motion.div>
           </motion.div>
