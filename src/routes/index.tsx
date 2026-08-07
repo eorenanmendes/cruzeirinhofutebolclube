@@ -641,7 +641,7 @@ function Index() {
                 <div className="flex-1 rounded-3xl overflow-hidden border border-white/10 bg-slate-900 shadow-inner min-h-[300px] md:min-h-[450px]">
                   <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.4260211142514!2d-46.5186043!3d-23.5531238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5e71415f36e3%3A0xe54d68e6587c4f4a!2zUi4gQ3VzdMOzZGlvIExvYm8sIDcgLSBKYXJkaW0gTWFyaW5nw6EsIF8_byBQYXVsbyAtIFNQLCAwMzUyNS0wODA!5e0!3m2!1spt-BR!2sbr!4v1713456789012!5m2!1spt-BR!2sbr" 
-                    className="w-full h-full border-0 grayscale invert brightness-75 contrast-125"
+                    className="w-full h-full border-0 grayscale invert brightness-90 contrast-125"
                     allowFullScreen={true}
                     loading="lazy" 
                     referrerPolicy="no-referrer-when-downgrade"
