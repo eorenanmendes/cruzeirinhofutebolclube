@@ -113,7 +113,7 @@ function Index() {
       {/* Equipe Técnica */}
       <section className="py-24 px-6 bg-slate-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">Nossa Equipe Técnica</h2>
+          <h2 className="text-4xl md:text-5xl font-black text-center mb-16 italic uppercase tracking-tighter">Nossa Equipe Técnica</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { name: "Prof. Ricardo Silva", role: "Coordenador Técnico", desc: "Mais de 15 anos de experiência na formação de atletas de base." },
