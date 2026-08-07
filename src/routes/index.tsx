@@ -12,6 +12,7 @@ import img3Asset from "@/assets/image-3.png.asset.json";
 import img4Asset from "@/assets/image-4.png.asset.json";
 import img5Asset from "@/assets/image-5.png.asset.json";
 import imgWebpAsset from "@/assets/image.webp.asset.json";
+import bookingBgAsset from "@/assets/image-6.png.asset.json";
 
 const schema = z.object({
   name: z.string().min(2),
@@ -89,7 +90,7 @@ function Index() {
       <section className="relative min-h-screen flex flex-col items-start justify-center p-6 md:p-24 bg-slate-950 text-white overflow-hidden py-32">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=2000" 
+            src={img2Asset.url} 
             className="w-full h-full object-cover opacity-30"
             alt="Soccer Field"
           />
@@ -205,7 +206,7 @@ function Index() {
           >
             <div className="absolute inset-0 bg-blue-600 rounded-[3rem] rotate-3 opacity-20 blur-2xl"></div>
             <img 
-              src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?auto=format&fit=crop&q=80&w=1000" 
+              src={img2Asset.url} 
               className="relative z-10 w-full aspect-[4/5] object-cover rounded-[3rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" 
               alt="Atleta em treinamento" 
             />
@@ -396,7 +397,9 @@ function Index() {
 
       {/* Footer CTA */}
       <section className="py-32 px-6 bg-slate-950 text-white text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none"></div>
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <img src={img2Asset.url} className="w-full h-full object-cover grayscale brightness-50" />
+        </div>
         <div className="relative z-10">
           <h2 className="text-6xl md:text-8xl font-black mb-8 italic uppercase tracking-tighter">Prepare seu filho para o topo.</h2>
           <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">Não perca a chance de transformar o futuro do seu pequeno atleta com a melhor estrutura de treinamento.</p>
@@ -488,7 +491,18 @@ function Index() {
               </div>
 
               {/* Main Content: Categories & Form */}
-              <div className="flex-1 p-8 md:p-12 overflow-y-auto max-h-[80vh] md:max-h-none scrollbar-hide">
+              <div className="flex-1 p-8 md:p-12 overflow-y-auto max-h-[80vh] md:max-h-none scrollbar-hide relative">
+                {/* Background Image requested by user */}
+                <div className="absolute inset-0 z-0 overflow-hidden">
+                  <img 
+                    src={bookingBgAsset.url} 
+                    className="w-full h-full object-cover opacity-20 grayscale brightness-50"
+                    alt="Background"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900/40 to-slate-900/90" />
+                </div>
+                
+                <div className="relative z-10 h-full flex flex-col min-h-full">
                 {!selectedCategory ? (
                   <motion.div
                     initial={{ opacity: 0, x: 20 }}
@@ -567,6 +581,7 @@ function Index() {
                     </form>
                   </motion.div>
                 )}
+                </div>
               </div>
             </motion.div>
           </motion.div>
