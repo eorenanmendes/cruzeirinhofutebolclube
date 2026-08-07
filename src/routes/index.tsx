@@ -156,18 +156,26 @@ function Index() {
       </section>
 
       {/* Informações */}
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-center">
+      <section className="py-32 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-16 text-center">
           {[
-            { icon: MapPin, val: "CT Geração Craques", label: "São Paulo / SP" },
-            { icon: Trophy, val: "3x", label: "Campeão Estadual" },
-            { icon: Users, val: "+500", label: "Alunos Ativos" }
+            { icon: MapPin, val: "CT Geração Craques", label: "São Paulo / SP", color: "text-blue-600" },
+            { icon: Trophy, val: "15+", label: "Títulos Conquistados", color: "text-amber-500" },
+            { icon: Users, val: "1.2k", label: "Atletas Formados", color: "text-emerald-500" }
           ].map((item, i) => (
-            <div key={i}>
-              <item.icon className="w-10 h-10 text-blue-600 mx-auto mb-6" />
-              <div className="text-5xl font-bold text-slate-900 mb-2">{item.val}</div>
-              <div className="text-slate-500 font-medium">{item.label}</div>
-            </div>
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <div className={`w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-sm ${item.color}`}>
+                <item.icon className="w-10 h-10" />
+              </div>
+              <div className="text-6xl font-black text-slate-950 mb-3 tracking-tighter">{item.val}</div>
+              <div className="text-slate-400 font-black uppercase tracking-widest text-sm">{item.label}</div>
+            </motion.div>
           ))}
         </div>
       </section>
