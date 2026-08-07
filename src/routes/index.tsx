@@ -152,6 +152,7 @@ function Index() {
             />
           </motion.div>
         </div>
+      </section>
 
       {/* Equipe Técnica */}
       <section className="py-24 px-6 bg-slate-50">
