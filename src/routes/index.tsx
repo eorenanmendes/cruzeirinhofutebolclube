@@ -232,12 +232,22 @@ function Index() {
       </section>
 
       {/* Footer CTA */}
-      <section className="py-24 px-6 bg-white text-center">
-        <h2 className="text-5xl font-bold mb-6">Seu próximo craque pode começar aqui.</h2>
-        <p className="text-xl text-slate-500 mb-10 max-w-xl mx-auto">Faça parte da nossa escolinha e dê o próximo passo na formação do seu atleta.</p>
-        <button className="bg-slate-900 hover:bg-slate-800 text-white px-10 py-5 rounded-full font-bold text-lg transition flex items-center gap-2 mx-auto">
-          <MessageCircle className="w-5 h-5" /> Falar pelo WhatsApp
-        </button>
+      <section className="py-32 px-6 bg-slate-950 text-white text-center relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none"></div>
+        <div className="relative z-10">
+          <h2 className="text-6xl md:text-8xl font-black mb-8 italic uppercase tracking-tighter">Prepare seu filho para o topo.</h2>
+          <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">Não perca a chance de transformar o futuro do seu pequeno atleta com a melhor estrutura de treinamento.</p>
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-green-500 hover:bg-green-600 text-white px-12 py-6 rounded-2xl font-black uppercase tracking-widest text-xl transition-all flex items-center gap-4 mx-auto shadow-[0_0_40px_rgba(34,197,94,0.3)]"
+          >
+            <MessageCircle className="w-8 h-8" /> Falar com Consultor no WhatsApp
+          </motion.button>
+          <div className="mt-12 text-slate-500 font-black uppercase tracking-widest text-xs">
+            © 2026 GERAÇÃO CRAQUES • TODOS OS DIREITOS RESERVADOS
+          </div>
+        </div>
       </section>
     </div>
   );
