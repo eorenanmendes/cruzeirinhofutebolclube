@@ -473,7 +473,7 @@ function Index() {
               </button>
 
               {/* Sidebar: Services & Stats */}
-               <div className="w-full md:w-80 bg-slate-950 p-8 md:p-12 flex flex-col justify-between text-white relative overflow-hidden border-r border-white/5">
+               <div className="hidden md:flex md:w-80 bg-slate-950 p-12 flex-col justify-between text-white relative overflow-hidden border-r border-white/5">
                  <div className="absolute inset-0 opacity-20">
                    <img src={bookingBgAsset.url} className="w-full h-full object-cover grayscale brightness-50" alt="Sidebar BG" />
                  </div>
