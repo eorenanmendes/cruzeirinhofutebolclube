@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Trophy, Users, Calendar, MessageCircle, Mail } from "lucide-react";
+import { ArrowRight, MapPin, Trophy, Users, Calendar, MessageCircle, Mail, Menu } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast, Toaster } from "sonner";
+import logoAsset from "@/assets/logo.asset.json";
 
 const schema = z.object({
   name: z.string().min(2),
@@ -30,8 +31,34 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-blue-500/30">
+    <div className="min-h-screen bg-black text-white selection:bg-blue-600/30">
       <Toaster />
+
+      {/* Header/Navbar */}
+      <nav className="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur-xl border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img src={logoAsset.url} alt="Cruzeirinho Logo" className="w-12 h-12 md:w-14 md:h-14" />
+            <div className="flex flex-col">
+              <span className="text-xl md:text-2xl font-black italic uppercase tracking-tighter leading-none">Cruzeirinho</span>
+              <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-blue-500">Futebol Clube</span>
+            </div>
+          </div>
+          
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#categorias" className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Categorias</a>
+            <a href="#equipe" className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Equipe</a>
+            <a href="#agendar" className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Agendar Aula</a>
+            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-black uppercase tracking-widest text-xs transition shadow-lg shadow-blue-600/20">
+              Contato
+            </button>
+          </div>
+          
+          <button className="md:hidden text-white">
+            <Menu className="w-6 h-6" />
+          </button>
+        </div>
+      </nav>
       
       {/* Hero */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center p-6 bg-slate-950 text-white overflow-hidden py-32">
@@ -52,13 +79,13 @@ function Index() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
-            className="inline-block px-4 py-1 bg-blue-600/20 text-blue-400 font-bold uppercase tracking-widest text-sm mb-6 rounded-full border border-blue-500/30 backdrop-blur-sm"
+            className="inline-block px-4 py-1 bg-blue-600/20 text-blue-500 font-bold uppercase tracking-widest text-sm mb-6 rounded-full border border-blue-600/30 backdrop-blur-sm"
           >
             Matrículas Abertas
           </motion.div>
           <h1 className="text-6xl md:text-9xl font-black mb-8 leading-tight tracking-tighter italic uppercase">
             Onde nascem os<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-700 animate-pulse">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-800 animate-pulse">
               futuros craques.
             </span>
           </h1>
@@ -84,7 +111,7 @@ function Index() {
       </section>
 
       {/* Categorias */}
-      <section className="py-24 px-6 bg-black relative">
+      <section id="categorias" className="py-24 px-6 bg-black relative">
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="flex flex-col items-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black italic uppercase tracking-tighter relative">
@@ -160,7 +187,7 @@ function Index() {
       </section>
 
       {/* Equipe Técnica */}
-      <section className="py-24 px-6 bg-black">
+      <section id="equipe" className="py-24 px-6 bg-black">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col items-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black text-center italic uppercase tracking-tighter relative">
@@ -236,7 +263,7 @@ function Index() {
       </section>
 
       {/* Formulário */}
-      <section className="py-24 px-6 bg-black">
+      <section id="agendar" className="py-24 px-6 bg-black">
         <div className="max-w-2xl mx-auto bg-slate-900/40 backdrop-blur-xl p-10 md:p-16 rounded-[3rem] shadow-2xl border border-white/5">
           <h2 className="text-4xl md:text-5xl font-black mb-16 text-center italic uppercase tracking-tighter relative">
             <span className="absolute -top-6 -left-4 text-8xl opacity-5 text-blue-500 select-none">AULA</span>
