@@ -109,6 +109,49 @@ function Index() {
           </div>
         </div>
       </section>
+      
+      {/* Diferenciais Section (Adicionada para alinhar com o nível visual da referência) */}
+      <section className="py-24 px-6 bg-slate-950 text-white overflow-hidden relative">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-blue-500 font-black uppercase tracking-widest mb-6">Por que escolher a Geração Craques?</div>
+            <h2 className="text-5xl md:text-7xl font-black mb-10 italic uppercase tracking-tighter leading-[0.9]">Excelência em cada<br /><span className="text-blue-500 underline decoration-blue-500/30">detalhe.</span></h2>
+            <div className="space-y-8">
+              {[
+                { title: "Metodologia Europeia", desc: "Treinamentos baseados nos maiores clubes do mundo." },
+                { title: "CT de Última Geração", desc: "Gramado sintético profissional e estrutura completa." },
+                { title: "Foco no Caráter", desc: "Desenvolvemos cidadãos antes de atletas." }
+              ].map((item, i) => (
+                <div key={i} className="flex gap-6 items-start">
+                  <div className="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center shrink-0 shadow-lg shadow-blue-600/20 text-white font-black italic">
+                    0{i+1}
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-black italic uppercase tracking-tighter mb-2">{item.title}</h3>
+                    <p className="text-slate-400 font-medium leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="absolute inset-0 bg-blue-600 rounded-[3rem] rotate-3 opacity-20 blur-2xl"></div>
+            <img 
+              src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?auto=format&fit=crop&q=80&w=1000" 
+              className="relative z-10 w-full aspect-[4/5] object-cover rounded-[3rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" 
+              alt="Atleta em treinamento" 
+            />
+          </motion.div>
+        </div>
 
       {/* Equipe Técnica */}
       <section className="py-24 px-6 bg-slate-50">
