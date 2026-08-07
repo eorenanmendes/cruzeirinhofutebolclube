@@ -30,6 +30,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [isBookingOpen, setIsBookingOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isMapOpen, setIsMapOpen] = React.useState(false);
   const [selectedCategory, setSelectedCategory] = React.useState<string | null>(null);
 
@@ -82,7 +83,7 @@ function Index() {
             </button>
           </div>
           
-          <button className="md:hidden text-white" onClick={() => setIsBookingOpen(true)}>
+          <button className="md:hidden text-white" onClick={() => setIsMenuOpen(true)}>
             <Menu className="w-6 h-6" />
           </button>
         </div>
@@ -448,6 +449,65 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-[100] bg-black flex flex-col p-8"
+          >
+            <div className="flex justify-between items-center mb-12">
+              <div className="flex items-center gap-3">
+                <img src={logoAsset.url} alt="Logo" className="w-10 h-10" />
+                <span className="text-xl font-black italic uppercase tracking-tighter">Cruzeirinho</span>
+              </div>
+              <button onClick={() => setIsMenuOpen(false)} className="p-2 bg-white/5 rounded-full">
+                <X className="w-6 h-6 text-white" />
+              </button>
+            </div>
+
+            <nav className="flex flex-col gap-8">
+              {[
+                { label: "Início", href: "#" },
+                { label: "Categorias", href: "#categorias" },
+                { label: "Sobre Nós", href: "#diferenciais" },
+                { label: "Localização", href: "#localizacao" }
+              ].map((link, i) => (
+                <a 
+                  key={i}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-3xl font-black italic uppercase tracking-tighter hover:text-blue-500 transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+
+            <div className="mt-auto pt-8 border-t border-white/10 flex flex-col gap-4">
+              <button 
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  setIsBookingOpen(true);
+                }}
+                className="w-full bg-blue-600 text-white p-5 rounded-2xl font-black uppercase tracking-widest text-lg"
+              >
+                Agendar Aula
+              </button>
+              <div className="flex justify-center gap-6 text-slate-500">
+                <a href="https://www.instagram.com/cruzeirinho.fc.1969/" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="w-6 h-6" />
+                </a>
+                <Mail className="w-6 h-6" />
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* 3D-like Modal Overlay */}
       <AnimatePresence>
