@@ -330,10 +330,11 @@ function Index() {
             <motion.button 
               whileHover={{ scale: 1.02, boxShadow: "0 0 40px rgba(37,99,235,0.2)" }}
               whileTap={{ scale: 0.98 }}
-              type="submit" 
+              type="button"
+              onClick={() => setIsBookingOpen(true)}
               className="w-full bg-blue-600 hover:bg-blue-700 text-white p-6 rounded-2xl font-black uppercase tracking-widest text-xl transition-all shadow-2xl"
             >
-              Confirmar Solicitação
+              Agendar Agora
             </motion.button>
           </form>
         </div>
