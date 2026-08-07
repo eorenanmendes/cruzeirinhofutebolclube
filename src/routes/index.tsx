@@ -34,7 +34,7 @@ function Index() {
       <Toaster />
       
       {/* Hero */}
-      <section className="relative h-screen flex flex-col items-center justify-center text-center p-6 bg-slate-950 text-white overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center justify-center text-center p-6 bg-slate-950 text-white overflow-hidden py-32">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=2000" 
