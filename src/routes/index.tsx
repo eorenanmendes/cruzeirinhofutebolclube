@@ -620,11 +620,11 @@ function Index() {
               animate={{ opacity: 1, scale: 1, rotateX: 0, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, rotateX: -20, y: 50 }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="relative w-full max-w-5xl bg-slate-950 border border-white/10 rounded-[3rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.5)] flex flex-col min-h-[70vh] perspective-1000"
+              className="relative w-full max-w-6xl bg-slate-950 border border-white/10 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.5)] flex flex-col h-[90vh] md:h-[85vh] perspective-1000"
             >
               <button 
                 onClick={() => setIsMapOpen(false)}
-                className="absolute top-6 right-6 z-50 p-3 bg-white/5 hover:bg-white/10 rounded-full text-white transition-colors"
+                className="absolute top-4 right-4 md:top-6 md:right-6 z-50 p-3 bg-black/50 md:bg-white/5 hover:bg-white/10 rounded-full text-white backdrop-blur-md transition-colors border border-white/10"
               >
                 <X className="w-6 h-6" />
               </button>
