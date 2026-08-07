@@ -227,7 +227,7 @@ function Index() {
       {/* Formulário */}
       <section className="py-24 px-6 bg-slate-50">
         <div className="max-w-2xl mx-auto bg-white p-10 md:p-16 rounded-3xl shadow-lg border border-slate-100">
-          <h2 className="text-4xl font-bold mb-10 text-center">Agende uma Aula</h2>
+          <h2 className="text-4xl md:text-5xl font-black mb-16 text-center italic uppercase tracking-tighter">Agende uma Aula</h2>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-2">
