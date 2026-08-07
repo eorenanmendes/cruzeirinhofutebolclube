@@ -30,7 +30,7 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-black text-white selection:bg-blue-500/30">
       <Toaster />
       
       {/* Hero */}
@@ -84,9 +84,14 @@ function Index() {
       </section>
 
       {/* Categorias */}
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black text-center mb-16 italic uppercase tracking-tighter">Nossas Categorias</h2>
+      <section className="py-24 px-6 bg-black relative">
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="flex flex-col items-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black italic uppercase tracking-tighter relative">
+              <span className="absolute -top-6 -left-8 text-8xl opacity-5 text-blue-500 select-none">TOPICOS</span>
+              Nossas Categorias
+            </h2>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { title: "Sub-7", age: "5 a 7 anos", desc: "Introdução lúdica e fundamentos básicos do futebol." },
@@ -99,11 +104,11 @@ function Index() {
               <motion.div 
                 key={i} 
                 whileHover={{ y: -12, scale: 1.02 }}
-                className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:border-blue-500/50 hover:shadow-2xl transition-all duration-300"
+                className="bg-slate-900/50 backdrop-blur-md p-10 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(37,99,235,0.1)] transition-all duration-300 group"
               >
-                <h3 className="text-2xl font-bold mb-2">{cat.title}</h3>
-                <p className="text-blue-600 font-semibold mb-4">{cat.age}</p>
-                <p className="text-slate-600 leading-relaxed">{cat.desc}</p>
+                <h3 className="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors">{cat.title}</h3>
+                <p className="text-blue-500 font-semibold mb-4">{cat.age}</p>
+                <p className="text-slate-400 leading-relaxed group-hover:text-slate-200 transition-colors">{cat.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -155,9 +160,14 @@ function Index() {
       </section>
 
       {/* Equipe Técnica */}
-      <section className="py-24 px-6 bg-slate-50">
+      <section className="py-24 px-6 bg-black">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black text-center mb-16 italic uppercase tracking-tighter">Nossa Equipe Técnica</h2>
+          <div className="flex flex-col items-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-center italic uppercase tracking-tighter relative">
+              <span className="absolute -top-6 -left-12 text-8xl opacity-5 text-blue-500 select-none">EQUIPE</span>
+              Nossa Equipe Técnica
+            </h2>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { name: "Prof. Ricardo Silva", role: "Coordenador Técnico", desc: "Mais de 15 anos de experiência na formação de atletas de base." },
@@ -166,15 +176,15 @@ function Index() {
             ].map((staff, i) => (
               <motion.div 
                 key={i} 
-                whileHover={{ y: -5 }}
-                className="bg-white p-10 rounded-[2rem] shadow-xl text-center border-b-4 border-blue-600 transition-all"
+                whileHover={{ y: -5, borderColor: "rgba(37,99,235,1)" }}
+                className="bg-slate-900/30 backdrop-blur-sm p-10 rounded-[2rem] shadow-2xl text-center border-b-4 border-white/5 transition-all group"
               >
-                <div className="w-28 h-28 bg-slate-100 rounded-full mx-auto mb-8 border-4 border-slate-50 overflow-hidden shadow-inner flex items-center justify-center">
-                  <Users className="w-12 h-12 text-blue-600/30" />
+                <div className="w-28 h-28 bg-white/5 rounded-full mx-auto mb-8 border-4 border-white/5 overflow-hidden shadow-inner flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Users className="w-12 h-12 text-blue-500/30 group-hover:text-blue-500 transition-colors" />
                 </div>
-                <h3 className="text-2xl font-black italic uppercase tracking-tighter">{staff.name}</h3>
-                <div className="bg-blue-600/10 text-blue-600 text-xs font-black uppercase tracking-widest mt-3 py-1 px-3 rounded-full inline-block">{staff.role}</div>
-                <p className="text-slate-500 mt-6 text-sm leading-relaxed font-medium">{staff.desc}</p>
+                <h3 className="text-2xl font-black italic uppercase tracking-tighter group-hover:text-blue-400 transition-colors">{staff.name}</h3>
+                <div className="bg-blue-600/10 text-blue-400 text-xs font-black uppercase tracking-widest mt-3 py-1 px-3 rounded-full inline-block border border-blue-500/20">{staff.role}</div>
+                <p className="text-slate-400 mt-6 text-sm leading-relaxed font-medium">{staff.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -200,10 +210,10 @@ function Index() {
       </section>
 
       {/* Informações */}
-      <section className="py-32 px-6">
+      <section className="py-32 px-6 bg-black">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-16 text-center">
           {[
-            { icon: MapPin, val: "CT Geração Craques", label: "São Paulo / SP", color: "text-blue-600" },
+            { icon: MapPin, val: "CT Geração Craques", label: "São Paulo / SP", color: "text-blue-500" },
             { icon: Trophy, val: "15+", label: "Títulos Conquistados", color: "text-amber-500" },
             { icon: Users, val: "1.2k", label: "Atletas Formados", color: "text-emerald-500" }
           ].map((item, i) => (
@@ -213,61 +223,65 @@ function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
+              className="group"
             >
-              <div className={`w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-sm ${item.color}`}>
+              <div className={`w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-sm ${item.color} group-hover:scale-110 transition-transform duration-500`}>
                 <item.icon className="w-10 h-10" />
               </div>
-              <div className="text-6xl font-black text-slate-950 mb-3 tracking-tighter">{item.val}</div>
-              <div className="text-slate-400 font-black uppercase tracking-widest text-sm">{item.label}</div>
+              <div className="text-6xl font-black text-white mb-3 tracking-tighter group-hover:text-blue-500 transition-colors duration-500">{item.val}</div>
+              <div className="text-slate-500 font-black uppercase tracking-widest text-sm">{item.label}</div>
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* Formulário */}
-      <section className="py-24 px-6 bg-slate-50">
-        <div className="max-w-2xl mx-auto bg-white p-10 md:p-16 rounded-3xl shadow-lg border border-slate-100">
-          <h2 className="text-4xl md:text-5xl font-black mb-16 text-center italic uppercase tracking-tighter">Agende uma Aula</h2>
+      <section className="py-24 px-6 bg-black">
+        <div className="max-w-2xl mx-auto bg-slate-900/40 backdrop-blur-xl p-10 md:p-16 rounded-[3rem] shadow-2xl border border-white/5">
+          <h2 className="text-4xl md:text-5xl font-black mb-16 text-center italic uppercase tracking-tighter relative">
+            <span className="absolute -top-6 -left-4 text-8xl opacity-5 text-blue-500 select-none">AULA</span>
+            Agende uma Aula
+          </h2>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <label className="text-sm font-black uppercase tracking-widest text-slate-400 ml-1">Nome do Atleta</label>
-                <input {...register("name")} placeholder="Ex: João Silva" className="w-full p-5 rounded-2xl border-2 border-slate-100 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg" />
+                <label className="text-sm font-black uppercase tracking-widest text-slate-500 ml-1">Nome do Atleta</label>
+                <input {...register("name")} placeholder="Ex: João Silva" className="w-full p-5 rounded-2xl border-2 border-white/5 bg-white/5 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg text-white placeholder:text-slate-600" />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-black uppercase tracking-widest text-slate-400 ml-1">Idade</label>
-                <input {...register("age")} placeholder="Ex: 10 anos" className="w-full p-5 rounded-2xl border-2 border-slate-100 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg" />
+                <label className="text-sm font-black uppercase tracking-widest text-slate-500 ml-1">Idade</label>
+                <input {...register("age")} placeholder="Ex: 10 anos" className="w-full p-5 rounded-2xl border-2 border-white/5 bg-white/5 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg text-white placeholder:text-slate-600" />
               </div>
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-black uppercase tracking-widest text-slate-400 ml-1">Nome do Responsável</label>
-              <input {...register("parent")} placeholder="Ex: Maria Souza" className="w-full p-5 rounded-2xl border-2 border-slate-100 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg" />
+              <label className="text-sm font-black uppercase tracking-widest text-slate-500 ml-1">Nome do Responsável</label>
+              <input {...register("parent")} placeholder="Ex: Maria Souza" className="w-full p-5 rounded-2xl border-2 border-white/5 bg-white/5 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg text-white placeholder:text-slate-600" />
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-black uppercase tracking-widest text-slate-400 ml-1">WhatsApp de Contato</label>
-              <input {...register("whatsapp")} placeholder="(00) 00000-0000" className="w-full p-5 rounded-2xl border-2 border-slate-100 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg" />
+              <label className="text-sm font-black uppercase tracking-widest text-slate-500 ml-1">WhatsApp de Contato</label>
+              <input {...register("whatsapp")} placeholder="(00) 00000-0000" className="w-full p-5 rounded-2xl border-2 border-white/5 bg-white/5 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg text-white placeholder:text-slate-600" />
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-black uppercase tracking-widest text-slate-400 ml-1">Selecione a Categoria</label>
-              <select {...register("category")} className="w-full p-5 rounded-2xl border-2 border-slate-100 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg bg-white appearance-none">
-                <option value="">Escolher categoria...</option>
-                <option value="sub7">Sub-7 (5 a 7 anos)</option>
-                <option value="sub9">Sub-9 (8 a 9 anos)</option>
-                <option value="sub11">Sub-11 (10 a 11 anos)</option>
-                <option value="sub13">Sub-13 (12 a 13 anos)</option>
-                <option value="sub15">Sub-15 (14 a 15 anos)</option>
-                <option value="sub17">Sub-17 (16 a 17 anos)</option>
+              <label className="text-sm font-black uppercase tracking-widest text-slate-500 ml-1">Selecione a Categoria</label>
+              <select {...register("category")} className="w-full p-5 rounded-2xl border-2 border-white/5 bg-white/5 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg text-white bg-slate-900 appearance-none">
+                <option value="" className="bg-slate-900">Escolher categoria...</option>
+                <option value="sub7" className="bg-slate-900">Sub-7 (5 a 7 anos)</option>
+                <option value="sub9" className="bg-slate-900">Sub-9 (8 a 9 anos)</option>
+                <option value="sub11" className="bg-slate-900">Sub-11 (10 a 11 anos)</option>
+                <option value="sub13" className="bg-slate-900">Sub-13 (12 a 13 anos)</option>
+                <option value="sub15" className="bg-slate-900">Sub-15 (14 a 15 anos)</option>
+                <option value="sub17" className="bg-slate-900">Sub-17 (16 a 17 anos)</option>
               </select>
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-black uppercase tracking-widest text-slate-400 ml-1">Observações Adicionais</label>
-              <textarea {...register("notes")} placeholder="Conte-nos um pouco sobre a experiência do atleta..." className="w-full p-5 rounded-2xl border-2 border-slate-100 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg h-32" />
+              <label className="text-sm font-black uppercase tracking-widest text-slate-500 ml-1">Observações Adicionais</label>
+              <textarea {...register("notes")} placeholder="Conte-nos um pouco sobre a experiência do atleta..." className="w-full p-5 rounded-2xl border-2 border-white/5 bg-white/5 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg text-white placeholder:text-slate-600 h-32" />
             </div>
             <motion.button 
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.02, boxShadow: "0 0 40px rgba(37,99,235,0.2)" }}
               whileTap={{ scale: 0.98 }}
               type="submit" 
-              className="w-full bg-slate-900 hover:bg-black text-white p-6 rounded-2xl font-black uppercase tracking-widest text-xl transition-all shadow-2xl"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white p-6 rounded-2xl font-black uppercase tracking-widest text-xl transition-all shadow-2xl"
             >
               Confirmar Solicitação
             </motion.button>
