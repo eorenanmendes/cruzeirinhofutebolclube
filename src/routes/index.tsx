@@ -526,12 +526,13 @@ function Index() {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                   >
-                    <div className="mb-10">
-                      <h2 className="text-4xl font-black italic uppercase tracking-tighter mb-2">Selecione a Categoria</h2>
-                      <p className="text-slate-400 font-medium">O primeiro passo para o futuro começa com a escolha certa.</p>
+                    <div className="mb-10 text-center md:text-left">
+                      <img src={logoAsset.url} alt="Logo" className="w-16 h-16 mx-auto md:mx-0 mb-4 md:hidden" />
+                      <h2 className="text-3xl md:text-4xl font-black italic uppercase tracking-tighter mb-2">Escolha sua Experiência</h2>
+                      <p className="text-slate-400 font-medium text-sm md:text-base">O primeiro passo para o futuro começa com a escolha certa.</p>
                     </div>
 
-                    <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="flex md:grid md:grid-cols-2 gap-4 overflow-x-auto md:overflow-x-visible pb-6 md:pb-0 snap-x snap-mandatory scrollbar-hide -mx-2 px-2 md:mx-0 md:px-0">
                       {categories.map((cat) => (
                         <button
                           key={cat.id}
@@ -539,7 +540,7 @@ function Index() {
                             setSelectedCategory(cat.id);
                             setValue("category", cat.id);
                           }}
-                          className="group relative bg-white/5 hover:bg-blue-600/10 border border-white/5 hover:border-blue-500/50 p-6 rounded-2xl text-left transition-all duration-300"
+                          className="group relative bg-white/5 hover:bg-blue-600/10 border border-white/5 hover:border-blue-500/50 p-6 rounded-2xl text-left transition-all duration-300 min-w-[260px] md:min-w-0 snap-center"
                         >
                           <div className="flex justify-between items-center mb-2">
                             <span className="text-xl font-black italic uppercase tracking-tighter group-hover:text-blue-500">{cat.title}</span>
