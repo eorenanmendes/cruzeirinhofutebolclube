@@ -206,7 +206,7 @@ function Index() {
           >
             <div className="absolute inset-0 bg-blue-600 rounded-[3rem] rotate-3 opacity-20 blur-2xl"></div>
             <img 
-              src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?auto=format&fit=crop&q=80&w=1000" 
+              src={img2Asset.url} 
               className="relative z-10 w-full aspect-[4/5] object-cover rounded-[3rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" 
               alt="Atleta em treinamento" 
             />
