@@ -457,8 +457,11 @@ function Index() {
               </button>
 
               {/* Sidebar: Services & Stats */}
-              <div className="w-full md:w-80 bg-blue-600 p-8 md:p-12 flex flex-col justify-between text-white relative overflow-hidden">
-                <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+               <div className="w-full md:w-80 bg-slate-950 p-8 md:p-12 flex flex-col justify-between text-white relative overflow-hidden border-r border-white/5">
+                 <div className="absolute inset-0 opacity-20">
+                   <img src={bookingBgAsset.url} className="w-full h-full object-cover grayscale brightness-50" alt="Sidebar BG" />
+                 </div>
+                 <div className="absolute inset-0 bg-blue-900/20 mix-blend-overlay"></div>
                 <div className="relative z-10">
                   <div className="flex flex-col items-center gap-4 mb-12">
                     <img src={logoAsset.url} alt="Logo" className="w-24 h-24 brightness-0 invert" />
@@ -483,7 +486,7 @@ function Index() {
 
                 <div className="relative z-10 pt-12">
                   <div className="p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10">
-                    <p className="text-[10px] font-black uppercase tracking-widest text-white/60 mb-2">Destaque</p>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-blue-500 mb-2">Destaque</p>
                     <p className="text-xs font-bold leading-relaxed italic">"Formamos não apenas atletas, mas cidadãos preparados para vencer."</p>
                   </div>
                 </div>
@@ -498,7 +501,7 @@ function Index() {
                     className="w-full h-full object-cover opacity-40 grayscale-0 brightness-75"
                     alt="Background"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900/40 to-slate-900/90" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-black via-black/60 to-black/90" />
                 </div>
                 
                 <div className="relative z-10 h-full flex flex-col min-h-full">
