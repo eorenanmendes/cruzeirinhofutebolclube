@@ -82,7 +82,7 @@ function Index() {
             </button>
           </div>
           
-          <button className="md:hidden text-white">
+          <button className="md:hidden text-white" onClick={() => setIsBookingOpen(true)}>
             <Menu className="w-6 h-6" />
           </button>
         </div>
@@ -463,11 +463,11 @@ function Index() {
               animate={{ opacity: 1, scale: 1, rotateX: 0, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, rotateX: -20, y: 50 }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="relative w-full max-w-5xl bg-slate-900/90 border border-white/10 rounded-[3rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.5),0_0_80px_rgba(37,99,235,0.15)] flex flex-col md:flex-row min-h-[80vh] perspective-1000"
+              className="relative w-full max-w-5xl bg-slate-900/90 border border-white/10 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.5),0_0_80px_rgba(37,99,235,0.15)] flex flex-col md:flex-row h-[90vh] md:h-auto md:min-h-[80vh] perspective-1000"
             >
               <button 
                 onClick={() => setIsBookingOpen(false)}
-                className="absolute top-6 right-6 z-50 p-3 bg-white/5 hover:bg-white/10 rounded-full text-white transition-colors"
+                className="absolute top-4 right-4 md:top-6 md:right-6 z-[60] p-3 bg-black/50 md:bg-white/5 hover:bg-white/10 rounded-full text-white backdrop-blur-md transition-colors border border-white/10"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -620,28 +620,28 @@ function Index() {
               animate={{ opacity: 1, scale: 1, rotateX: 0, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, rotateX: -20, y: 50 }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="relative w-full max-w-5xl bg-slate-950 border border-white/10 rounded-[3rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.5)] flex flex-col min-h-[70vh] perspective-1000"
+              className="relative w-full max-w-6xl bg-slate-950 border border-white/10 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.5)] flex flex-col h-[90vh] md:h-[85vh] perspective-1000"
             >
               <button 
                 onClick={() => setIsMapOpen(false)}
-                className="absolute top-6 right-6 z-50 p-3 bg-white/5 hover:bg-white/10 rounded-full text-white transition-colors"
+                className="absolute top-4 right-4 md:top-6 md:right-6 z-50 p-3 bg-black/50 md:bg-white/5 hover:bg-white/10 rounded-full text-white backdrop-blur-md transition-colors border border-white/10"
               >
                 <X className="w-6 h-6" />
               </button>
 
-              <div className="flex-1 w-full h-full p-4 md:p-12 flex flex-col">
-                <div className="mb-8">
-                  <h2 className="text-4xl font-black italic uppercase tracking-tighter mb-2">Nosso CT</h2>
-                  <p className="text-slate-400 font-medium flex items-center gap-2">
+              <div className="flex-1 w-full h-full p-6 md:p-12 flex flex-col overflow-y-auto scrollbar-hide">
+                <div className="mb-6 md:mb-10 text-center md:text-left">
+                  <h2 className="text-3xl md:text-5xl font-black italic uppercase tracking-tighter mb-2">Nosso CT</h2>
+                  <p className="text-slate-400 font-medium flex items-center justify-center md:justify-start gap-2 text-sm md:text-base">
                     <MapPin className="w-4 h-4 text-blue-500" />
                     Custódio Lobo Nº 7 - Jardim Maringá, São Paulo - SP
                   </p>
                 </div>
-
-                <div className="flex-1 rounded-2xl overflow-hidden border border-white/10 bg-slate-900 shadow-inner min-h-[400px]">
+ 
+                <div className="flex-1 rounded-3xl overflow-hidden border border-white/10 bg-slate-900 shadow-inner min-h-[300px] md:min-h-[450px]">
                   <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.4260211142514!2d-46.5186043!3d-23.5531238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5e71415f36e3%3A0xe54d68e6587c4f4a!2zUi4gQ3VzdMOzZGlvIExvYm8sIDcgLSBKYXJkaW0gTWFyaW5nw6EsIF8_byBQYXVsbyAtIFNQLCAwMzUyNS0wODA!5e0!3m2!1spt-BR!2sbr!4v1713456789012!5m2!1spt-BR!2sbr" 
-                    className="w-full h-full border-0 grayscale invert brightness-75 contrast-125"
+                    className="w-full h-full border-0 grayscale invert brightness-90 contrast-125"
                     allowFullScreen={true}
                     loading="lazy" 
                     referrerPolicy="no-referrer-when-downgrade"
