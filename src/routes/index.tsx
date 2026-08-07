@@ -178,13 +178,13 @@ function Index() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="text-blue-500 font-black uppercase tracking-widest mb-6">Por que escolher a Geração Craques?</div>
-            <h2 className="text-5xl md:text-7xl font-black mb-10 italic uppercase tracking-tighter leading-[0.9]">Excelência em cada<br /><span className="text-blue-500 underline decoration-blue-500/30">detalhe.</span></h2>
+            <div className="text-blue-500 font-black uppercase tracking-widest mb-6">Por que escolher o Cruzeirinho?</div>
+            <h2 className="text-5xl md:text-7xl font-black mb-10 italic uppercase tracking-tighter leading-[0.9]">A força da<br /><span className="text-blue-500 underline decoration-blue-500/30">Zona Leste.</span></h2>
             <div className="space-y-8">
               {[
-                { title: "Metodologia Europeia", desc: "Treinamentos baseados nos maiores clubes do mundo." },
-                { title: "CT de Última Geração", desc: "Gramado sintético profissional e estrutura completa." },
-                { title: "Foco no Caráter", desc: "Desenvolvemos cidadãos antes de atletas." }
+                { title: "Tradição da ZL", desc: "A essência do futebol de várzea com técnica profissional." },
+                { title: "Raça e Talento", desc: "Aqui formamos jogadores com a garra da nossa região." },
+                { title: "Comunidade Forte", desc: "Mais que uma escolinha, somos a família Cruzeirinho." }
               ].map((item, i) => (
                 <div key={i} className="flex gap-6 items-start">
                   <div className="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center shrink-0 shadow-lg shadow-blue-600/20 text-white font-black italic">
