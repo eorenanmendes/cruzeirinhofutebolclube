@@ -98,8 +98,8 @@ function Index() {
             ].map((cat, i) => (
               <motion.div 
                 key={i} 
-                whileHover={{ y: -10 }}
-                className="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-blue-500/30 hover:shadow-xl transition"
+                whileHover={{ y: -12, scale: 1.02 }}
+                className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:border-blue-500/50 hover:shadow-2xl transition-all duration-300"
               >
                 <h3 className="text-2xl font-bold mb-2">{cat.title}</h3>
                 <p className="text-blue-600 font-semibold mb-4">{cat.age}</p>
