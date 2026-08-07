@@ -30,6 +30,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [isBookingOpen, setIsBookingOpen] = React.useState(false);
+  const [isMapOpen, setIsMapOpen] = React.useState(false);
   const [selectedCategory, setSelectedCategory] = React.useState<string | null>(null);
 
   const { register, handleSubmit, reset, setValue } = useForm({
@@ -131,6 +132,7 @@ function Index() {
             </motion.button>
             <motion.button 
               whileHover={{ backgroundColor: "rgba(255,255,255,0.1)" }}
+              onClick={() => setIsMapOpen(true)}
               className="bg-transparent border-2 border-white text-white px-10 py-5 rounded-full font-black uppercase tracking-tighter text-lg transition w-full sm:w-auto text-center"
             >
               Conhecer CT
@@ -370,21 +372,79 @@ function Index() {
       </section>
 
       {/* Final Footer */}
-      <footer className="py-12 px-6 bg-black border-t border-white/5">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="Cruzeirinho Logo" className="w-10 h-10" />
-            <div className="flex flex-col text-left">
-              <span className="text-lg font-black italic uppercase tracking-tighter leading-none">Cruzeirinho</span>
-              <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-blue-500">Futebol Clube</span>
+      <footer className="py-16 px-6 bg-black border-t border-white/5 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-12 items-start mb-16">
+            <div className="flex flex-col items-start gap-4">
+              <div className="flex items-center gap-3">
+                <img src={logoAsset.url} alt="Cruzeirinho Logo" className="w-12 h-12" />
+                <div className="flex flex-col text-left">
+                  <span className="text-xl font-black italic uppercase tracking-tighter leading-none">Cruzeirinho</span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-500">Futebol Clube</span>
+                </div>
+              </div>
+              <p className="text-slate-500 text-sm font-medium leading-relaxed mt-4">
+                Formando atletas e cidadãos na Zona Leste desde 1969. Excelência técnica e compromisso social.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-6">
+              <h4 className="text-sm font-black uppercase tracking-[0.2em] text-white">Redes Sociais</h4>
+              <div className="flex flex-col gap-4">
+                <a 
+                  href="https://www.instagram.com/cruzeirinho.fc.1969/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-blue-600 transition-all">
+                    <MessageCircle className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-black uppercase tracking-widest leading-none mb-1 group-hover:text-blue-500">Escolinha Oficial</p>
+                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">@cruzeirinho.fc.1969</p>
+                  </div>
+                </a>
+                <a 
+                  href="https://www.instagram.com/cruzeirinhops/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-blue-600 transition-all">
+                    <MessageCircle className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-black uppercase tracking-widest leading-none mb-1 group-hover:text-blue-500">Projeto Social</p>
+                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">@cruzeirinhops</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-6">
+              <h4 className="text-sm font-black uppercase tracking-[0.2em] text-white">Localização</h4>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                  <MapPin className="w-5 h-5 text-blue-500" />
+                </div>
+                <p className="text-slate-400 text-sm font-medium leading-relaxed">
+                  Custódio Lobo Nº 7<br />
+                  Jardim Maringá, São Paulo - SP<br />
+                  CEP: 03525-080
+                </p>
+              </div>
             </div>
           </div>
-          <div className="text-slate-500 text-[10px] font-black uppercase tracking-widest">
-            © 2026 Cruzeirinho Futebol Clube. Todos os direitos reservados.
-          </div>
-          <div className="flex gap-6">
-            <Mail className="w-5 h-5 text-slate-500 hover:text-blue-500 cursor-pointer transition-colors" />
-            <MessageCircle className="w-5 h-5 text-slate-500 hover:text-blue-500 cursor-pointer transition-colors" />
+
+          <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-slate-600 text-[10px] font-black uppercase tracking-widest">
+              © 2026 Cruzeirinho Futebol Clube. Todos os direitos reservados.
+            </div>
+            <div className="flex gap-6">
+              <Mail className="w-5 h-5 text-slate-500 hover:text-blue-500 cursor-pointer transition-colors" />
+              <MessageCircle className="w-5 h-5 text-slate-500 hover:text-blue-500 cursor-pointer transition-colors" />
+            </div>
           </div>
         </div>
       </footer>
@@ -539,6 +599,64 @@ function Index() {
                     </form>
                   </motion.div>
                 )}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Map Modal */}
+      <AnimatePresence>
+        {isMapOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 backdrop-blur-2xl bg-black/80"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, rotateX: 20, y: 50 }}
+              animate={{ opacity: 1, scale: 1, rotateX: 0, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, rotateX: -20, y: 50 }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="relative w-full max-w-5xl bg-slate-950 border border-white/10 rounded-[3rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.5)] flex flex-col min-h-[70vh] perspective-1000"
+            >
+              <button 
+                onClick={() => setIsMapOpen(false)}
+                className="absolute top-6 right-6 z-50 p-3 bg-white/5 hover:bg-white/10 rounded-full text-white transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+
+              <div className="flex-1 w-full h-full p-4 md:p-12 flex flex-col">
+                <div className="mb-8">
+                  <h2 className="text-4xl font-black italic uppercase tracking-tighter mb-2">Nosso CT</h2>
+                  <p className="text-slate-400 font-medium flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-blue-500" />
+                    Custódio Lobo Nº 7 - Jardim Maringá, São Paulo - SP
+                  </p>
+                </div>
+
+                <div className="flex-1 rounded-2xl overflow-hidden border border-white/10 bg-slate-900 shadow-inner min-h-[400px]">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.4260211142514!2d-46.5186043!3d-23.5531238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5e71415f36e3%3A0xe54d68e6587c4f4a!2zUi4gQ3VzdMOzZGlvIExvYm8sIDcgLSBKYXJkaW0gTWFyaW5nw6EsIF8_byBQYXVsbyAtIFNQLCAwMzUyNS0wODA!5e0!3m2!1spt-BR!2sbr!4v1713456789012!5m2!1spt-BR!2sbr" 
+                    className="w-full h-full border-0 grayscale invert brightness-75 contrast-125"
+                    allowFullScreen={true}
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+                
+                <div className="mt-8 flex justify-center">
+                   <a 
+                    href="https://www.google.com/maps/dir/?api=1&destination=Rua+Custodio+Lobo+7+Jardim+Maringa+Sao+Paulo" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-black uppercase tracking-widest text-sm transition-all shadow-xl shadow-blue-600/20 flex items-center gap-3"
+                  >
+                    Como Chegar <ArrowRight className="w-4 h-4" />
+                  </a>
                 </div>
               </div>
             </motion.div>
