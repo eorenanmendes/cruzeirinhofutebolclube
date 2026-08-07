@@ -13,7 +13,6 @@ import img4Asset from "@/assets/image-4.png.asset.json";
 import img5Asset from "@/assets/image-5.png.asset.json";
 import imgWebpAsset from "@/assets/image.webp.asset.json";
 import bookingBgAsset from "@/assets/image-6.png.asset.json";
-import athleteBgAsset from "@/assets/image-2.webp.asset.json";
 
 const schema = z.object({
   name: z.string().min(2),
