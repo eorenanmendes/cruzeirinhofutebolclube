@@ -7,6 +7,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast, Toaster } from "sonner";
 import logoAsset from "@/assets/logo.asset.json";
+import img2Asset from "@/assets/image-2.png.asset.json";
+import img3Asset from "@/assets/image-3.png.asset.json";
+import img4Asset from "@/assets/image-4.png.asset.json";
+import img5Asset from "@/assets/image-5.png.asset.json";
+import imgWebpAsset from "@/assets/image.webp.asset.json";
 
 const schema = z.object({
   name: z.string().min(2),
@@ -164,7 +169,7 @@ function Index() {
         </div>
       </section>
       
-      {/* Diferenciais Section (Adicionada para alinhar com o nível visual da referência) */}
+      {/* Diferenciais Section */}
       <section className="py-24 px-6 bg-slate-950 text-white overflow-hidden relative">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
           <motion.div
@@ -205,6 +210,52 @@ function Index() {
               alt="Atleta em treinamento" 
             />
           </motion.div>
+        </div>
+
+        {/* Galeria 3D Profissional */}
+        <div className="max-w-7xl mx-auto mt-32">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl md:text-5xl font-black italic uppercase tracking-tighter">Nossa Vivência Profissional</h3>
+            <p className="text-slate-400 mt-4 max-w-2xl mx-auto">Experiência real, conquistas e formação de elite em um ambiente de alto rendimento.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 perspective-1000">
+            {[
+              { src: img2Asset.url, title: "Grandes Conquistas", desc: "Campeões com dedicação e talento." },
+              { src: img3Asset.url, title: "Formação de Elite", desc: "Preparação para o topo do futebol." },
+              { src: img4Asset.url, title: "Ambiente Profissional", desc: "Vestiários e estrutura de primeira linha." },
+              { src: img5Asset.url, title: "Reconhecimento", desc: "Medalhas que coroam o esforço diário." },
+              { src: imgWebpAsset.url, title: "Prontos para o Jogo", desc: "Uniformes e atletas padrão série A." },
+              { src: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&q=80&w=800", title: "Paixão pelo Esporte", desc: "Onde o sonho se torna realidade." }
+            ].map((img, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, rotateY: 20, y: 50 }}
+                whileInView={{ opacity: 1, rotateY: 0, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  rotateY: -10, 
+                  rotateX: 10, 
+                  scale: 1.05,
+                  z: 50,
+                  boxShadow: "0 20px 40px rgba(37,99,235,0.3)"
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="relative group rounded-[2rem] overflow-hidden border border-white/10 bg-slate-900 shadow-2xl preserve-3d cursor-pointer"
+              >
+                <img 
+                  src={img.src} 
+                  alt={img.title} 
+                  className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                <div className="absolute bottom-0 left-0 p-8 w-full translate-z-20">
+                  <h4 className="text-xl font-black italic uppercase tracking-tighter mb-2 text-white group-hover:text-blue-400 transition-colors">{img.title}</h4>
+                  <p className="text-sm text-slate-300 font-medium opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0">{img.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
