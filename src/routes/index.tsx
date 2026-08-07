@@ -85,13 +85,13 @@ function Index() {
             Matrículas Abertas
           </motion.div>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight tracking-tighter italic uppercase">
-            Formação Elite e<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-800 animate-pulse">
-              Alta Performance.
-            </span>
+              O futuro do futebol
+            </span><br />
+            começa aqui.
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-2xl font-light leading-relaxed">
-            O futuro do futebol começa aqui. Metodologia exclusiva de ensino focada no desenvolvimento técnico e humano para jovens atletas de alto rendimento.
+            Metodologia exclusiva de ensino focada no desenvolvimento técnico e humano para jovens atletas de alto rendimento.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-start items-center">
             <motion.button 
