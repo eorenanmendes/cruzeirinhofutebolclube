@@ -138,10 +138,21 @@ function Index() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6 bg-blue-600 text-white text-center">
-        <h2 className="text-5xl font-bold mb-6">Venha Treinar com a gente!</h2>
-        <p className="text-xl text-blue-100 mb-10 max-w-xl mx-auto">Agende uma aula experimental para seu filho e conheça de perto nossa estrutura e metodologia de ensino.</p>
-        <button className="bg-white text-blue-600 hover:bg-slate-100 px-10 py-5 rounded-full font-bold text-lg transition">Agendar Aula</button>
+      <section className="py-32 px-6 bg-slate-950 text-white text-center relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+          <div className="absolute top-[-50%] left-[-10%] w-[120%] h-[200%] bg-[radial-gradient(circle_at_center,var(--color-blue-600)_0%,transparent_70%)]" />
+        </div>
+        <div className="relative z-10">
+          <h2 className="text-6xl md:text-8xl font-black mb-8 italic uppercase tracking-tighter">Venha Treinar Conosco!</h2>
+          <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">Agende uma aula experimental gratuita para seu filho e descubra por que somos referência em formação de atletas.</p>
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-6 rounded-full font-black uppercase tracking-tighter text-xl transition shadow-[0_0_30px_rgba(37,99,235,0.4)]"
+          >
+            Agendar Aula Agora
+          </motion.button>
+        </div>
       </section>
 
       {/* Informações */}
