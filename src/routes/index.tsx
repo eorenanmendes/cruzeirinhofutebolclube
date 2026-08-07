@@ -48,14 +48,37 @@ function Index() {
           transition={{ duration: 0.8 }}
           className="relative z-10 max-w-4xl"
         >
-          <div className="inline-block px-4 py-1 bg-blue-600/20 text-blue-400 font-bold uppercase tracking-widest text-sm mb-6 rounded-full border border-blue-500/30">Matrículas Abertas</div>
-          <h1 className="text-5xl md:text-8xl font-bold mb-6">Onde nascem os<br /><span className="text-blue-500">futuros craques.</span></h1>
-          <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-            Metodologia exclusiva de ensino focada no desenvolvimento técnico e humano para jovens atletas.
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+            className="inline-block px-4 py-1 bg-blue-600/20 text-blue-400 font-bold uppercase tracking-widest text-sm mb-6 rounded-full border border-blue-500/30 backdrop-blur-sm"
+          >
+            Matrículas Abertas
+          </motion.div>
+          <h1 className="text-6xl md:text-9xl font-black mb-8 leading-tight tracking-tighter italic uppercase">
+            Onde nascem os<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-700 animate-pulse">
+              futuros craques.
+            </span>
+          </h1>
+          <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+            Metodologia exclusiva de ensino focada no desenvolvimento técnico e humano para jovens atletas de alto rendimento.
           </p>
-          <div className="flex gap-4 justify-center">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold transition">Agendar Aula</button>
-            <button className="bg-transparent border border-white hover:bg-white/10 text-white px-8 py-4 rounded-full font-bold transition">Visitar</button>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <motion.button 
+              whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(37,99,235,0.4)" }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-full font-black uppercase tracking-tighter text-lg transition shadow-xl"
+            >
+              Agendar Aula Experimental
+            </motion.button>
+            <motion.button 
+              whileHover={{ backgroundColor: "rgba(255,255,255,0.1)" }}
+              className="bg-transparent border-2 border-white text-white px-10 py-5 rounded-full font-black uppercase tracking-tighter text-lg transition"
+            >
+              Conhecer CT
+            </motion.button>
           </div>
         </motion.div>
       </section>
