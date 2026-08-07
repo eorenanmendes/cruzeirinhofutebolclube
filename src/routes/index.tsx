@@ -84,9 +84,9 @@ function Index() {
             Matrículas Abertas
           </motion.div>
           <h1 className="text-6xl md:text-9xl font-black mb-8 leading-tight tracking-tighter italic uppercase">
-            Onde nascem os<br />
+            Treinamento de<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-800 animate-pulse">
-              futuros craques.
+              alto rendimento.
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
