@@ -176,20 +176,49 @@ function Index() {
       <section className="py-24 px-6 bg-slate-50">
         <div className="max-w-2xl mx-auto bg-white p-10 md:p-16 rounded-3xl shadow-lg border border-slate-100">
           <h2 className="text-4xl font-bold mb-10 text-center">Agende uma Aula</h2>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <input {...register("name")} placeholder="Nome da Criança" className="w-full p-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none" />
-              <input {...register("age")} placeholder="Idade" className="w-full p-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none" />
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-2">
+                <label className="text-sm font-black uppercase tracking-widest text-slate-400 ml-1">Nome do Atleta</label>
+                <input {...register("name")} placeholder="Ex: João Silva" className="w-full p-5 rounded-2xl border-2 border-slate-100 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg" />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-black uppercase tracking-widest text-slate-400 ml-1">Idade</label>
+                <input {...register("age")} placeholder="Ex: 10 anos" className="w-full p-5 rounded-2xl border-2 border-slate-100 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg" />
+              </div>
             </div>
-            <input {...register("parent")} placeholder="Nome do Responsável" className="w-full p-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none" />
-            <input {...register("whatsapp")} placeholder="WhatsApp" className="w-full p-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none" />
-            <select {...register("category")} className="w-full p-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none">
-              <option value="">Categoria Desejada</option>
-              <option value="sub7">Sub-7</option>
-              <option value="sub9">Sub-9</option>
-            </select>
-            <textarea {...register("notes")} placeholder="Observações" className="w-full p-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none h-32" />
-            <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white p-5 rounded-full font-bold text-lg transition">Agendar Aula</button>
+            <div className="space-y-2">
+              <label className="text-sm font-black uppercase tracking-widest text-slate-400 ml-1">Nome do Responsável</label>
+              <input {...register("parent")} placeholder="Ex: Maria Souza" className="w-full p-5 rounded-2xl border-2 border-slate-100 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg" />
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-black uppercase tracking-widest text-slate-400 ml-1">WhatsApp de Contato</label>
+              <input {...register("whatsapp")} placeholder="(00) 00000-0000" className="w-full p-5 rounded-2xl border-2 border-slate-100 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg" />
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-black uppercase tracking-widest text-slate-400 ml-1">Selecione a Categoria</label>
+              <select {...register("category")} className="w-full p-5 rounded-2xl border-2 border-slate-100 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg bg-white appearance-none">
+                <option value="">Escolher categoria...</option>
+                <option value="sub7">Sub-7 (5 a 7 anos)</option>
+                <option value="sub9">Sub-9 (8 a 9 anos)</option>
+                <option value="sub11">Sub-11 (10 a 11 anos)</option>
+                <option value="sub13">Sub-13 (12 a 13 anos)</option>
+                <option value="sub15">Sub-15 (14 a 15 anos)</option>
+                <option value="sub17">Sub-17 (16 a 17 anos)</option>
+              </select>
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-black uppercase tracking-widest text-slate-400 ml-1">Observações Adicionais</label>
+              <textarea {...register("notes")} placeholder="Conte-nos um pouco sobre a experiência do atleta..." className="w-full p-5 rounded-2xl border-2 border-slate-100 focus:border-blue-600 focus:ring-0 outline-none transition-all font-medium text-lg h-32" />
+            </div>
+            <motion.button 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              type="submit" 
+              className="w-full bg-slate-900 hover:bg-black text-white p-6 rounded-2xl font-black uppercase tracking-widest text-xl transition-all shadow-2xl"
+            >
+              Confirmar Solicitação
+            </motion.button>
           </form>
         </div>
       </section>
