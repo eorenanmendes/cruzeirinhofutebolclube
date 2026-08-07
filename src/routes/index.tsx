@@ -1,6 +1,7 @@
+import * as React from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Trophy, Users, Calendar, MessageCircle, Mail, Menu } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, MapPin, Trophy, Users, Calendar, MessageCircle, Mail, Menu, X, ChevronRight, Star } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -21,14 +22,33 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const { register, handleSubmit, reset } = useForm({
+  const [isBookingOpen, setIsBookingOpen] = React.useState(false);
+  const [selectedCategory, setSelectedCategory] = React.useState<string | null>(null);
+
+  const { register, handleSubmit, reset, setValue } = useForm({
     resolver: zodResolver(schema)
   });
 
   const onSubmit = () => {
     toast.success("Solicitação recebida! Entraremos em contato em breve.");
+    setIsBookingOpen(false);
     reset();
   };
+
+  const categories = [
+    { id: "sub7", title: "Sub-7", age: "5 a 7 anos", desc: "Introdução lúdica e fundamentos básicos do futebol." },
+    { id: "sub9", title: "Sub-9", age: "8 a 9 anos", desc: "Início do desenvolvimento técnico e tática individual." },
+    { id: "sub11", title: "Sub-11", age: "10 a 11 anos", desc: "Aprimoramento da leitura de jogo e coordenação motora." },
+    { id: "sub13", title: "Sub-13", age: "12 a 13 anos", desc: "Consolidação dos fundamentos e inteligência tática." },
+    { id: "sub15", title: "Sub-15", age: "14 a 15 anos", desc: "Preparação competitiva e disciplina atlética profissional." },
+    { id: "sub17", title: "Sub-17", age: "16 a 17 anos", desc: "Alta performance e transição para o futebol profissional." }
+  ];
+
+  const services = [
+    { title: "Treino Coletivo", icon: Users, price: "Grátis (1ª aula)" },
+    { title: "Personal Soccer", icon: Star, price: "Sob consulta" },
+    { title: "Análise de Desempenho", icon: Trophy, price: "Incluso" }
+  ];
 
   return (
     <div className="min-h-screen bg-black text-white selection:bg-blue-600/30">
@@ -48,7 +68,7 @@ function Index() {
           <div className="hidden md:flex items-center gap-8">
             <a href="#categorias" className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Categorias</a>
             <a href="#equipe" className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Equipe</a>
-            <a href="#agendar" className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Agendar Aula</a>
+            <button onClick={() => setIsBookingOpen(true)} className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Agendar Aula</button>
             <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-black uppercase tracking-widest text-xs transition shadow-lg shadow-blue-600/20">
               Contato
             </button>
@@ -98,6 +118,7 @@ function Index() {
               whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(37,99,235,0.4)" }}
               whileTap={{ scale: 0.95 }}
               className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-full font-black uppercase tracking-tighter text-lg transition shadow-xl w-full sm:w-auto text-center"
+              onClick={() => setIsBookingOpen(true)}
             >
               Agendar Aula Experimental
             </motion.button>
@@ -231,6 +252,7 @@ function Index() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-6 rounded-full font-black uppercase tracking-tighter text-xl transition shadow-[0_0_30px_rgba(37,99,235,0.4)]"
+            onClick={() => setIsBookingOpen(true)}
           >
             Agendar Aula Agora
           </motion.button>
@@ -352,6 +374,149 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      {/* 3D-like Modal Overlay */}
+      <AnimatePresence>
+        {isBookingOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 backdrop-blur-2xl bg-black/80"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, rotateX: 20, y: 50 }}
+              animate={{ opacity: 1, scale: 1, rotateX: 0, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, rotateX: -20, y: 50 }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="relative w-full max-w-5xl bg-slate-900/90 border border-white/10 rounded-[3rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.5),0_0_80px_rgba(37,99,235,0.15)] flex flex-col md:flex-row min-h-[80vh] perspective-1000"
+            >
+              <button 
+                onClick={() => setIsBookingOpen(false)}
+                className="absolute top-6 right-6 z-50 p-3 bg-white/5 hover:bg-white/10 rounded-full text-white transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+
+              {/* Sidebar: Services & Stats */}
+              <div className="w-full md:w-80 bg-blue-600 p-8 md:p-12 flex flex-col justify-between text-white relative overflow-hidden">
+                <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-12">
+                    <img src={logoAsset.url} alt="Logo" className="w-12 h-12 brightness-0 invert" />
+                    <span className="text-xl font-black italic uppercase tracking-tighter">Booking</span>
+                  </div>
+                  
+                  <h3 className="text-3xl font-black italic uppercase tracking-tighter mb-8 leading-tight">Escolha sua <br />experiência</h3>
+                  
+                  <div className="space-y-6">
+                    {services.map((s, i) => (
+                      <div key={i} className="flex items-center gap-4 group cursor-default">
+                        <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                          <s.icon className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-black uppercase tracking-widest leading-none mb-1">{s.title}</p>
+                          <p className="text-[10px] font-bold text-white/60 uppercase tracking-widest">{s.price}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="relative z-10 pt-12">
+                  <div className="p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10">
+                    <p className="text-[10px] font-black uppercase tracking-widest text-white/60 mb-2">Destaque</p>
+                    <p className="text-xs font-bold leading-relaxed italic">"Formamos não apenas atletas, mas cidadãos preparados para vencer."</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Main Content: Categories & Form */}
+              <div className="flex-1 p-8 md:p-12 overflow-y-auto max-h-[80vh] md:max-h-none scrollbar-hide">
+                {!selectedCategory ? (
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                  >
+                    <div className="mb-10">
+                      <h2 className="text-4xl font-black italic uppercase tracking-tighter mb-2">Selecione a Categoria</h2>
+                      <p className="text-slate-400 font-medium">O primeiro passo para o futuro começa com a escolha certa.</p>
+                    </div>
+
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      {categories.map((cat) => (
+                        <button
+                          key={cat.id}
+                          onClick={() => {
+                            setSelectedCategory(cat.id);
+                            setValue("category", cat.id);
+                          }}
+                          className="group relative bg-white/5 hover:bg-blue-600/10 border border-white/5 hover:border-blue-500/50 p-6 rounded-2xl text-left transition-all duration-300"
+                        >
+                          <div className="flex justify-between items-center mb-2">
+                            <span className="text-xl font-black italic uppercase tracking-tighter group-hover:text-blue-500">{cat.title}</span>
+                            <ChevronRight className="w-5 h-5 text-slate-600 group-hover:text-blue-500 group-hover:translate-x-1 transition-all" />
+                          </div>
+                          <p className="text-xs font-bold text-blue-500 uppercase tracking-widest mb-3">{cat.age}</p>
+                          <p className="text-xs text-slate-500 leading-relaxed font-medium line-clamp-2">{cat.desc}</p>
+                        </button>
+                      ))}
+                    </div>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                  >
+                    <div className="mb-10 flex items-center justify-between">
+                      <div>
+                        <button 
+                          onClick={() => setSelectedCategory(null)}
+                          className="text-xs font-black uppercase tracking-widest text-blue-500 mb-2 flex items-center gap-2 hover:translate-x-[-4px] transition-transform"
+                        >
+                          ← Voltar
+                        </button>
+                        <h2 className="text-4xl font-black italic uppercase tracking-tighter">Finalizar Agendamento</h2>
+                      </div>
+                      <div className="px-4 py-2 bg-blue-600/10 rounded-xl border border-blue-500/20">
+                        <span className="text-blue-500 font-black italic uppercase tracking-tighter">
+                          {categories.find(c => c.id === selectedCategory)?.title}
+                        </span>
+                      </div>
+                    </div>
+
+                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                      <div className="grid sm:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1">Nome do Atleta</label>
+                          <input {...register("name")} placeholder="João Silva" className="w-full p-4 rounded-xl border border-white/10 bg-white/5 focus:border-blue-600 outline-none transition-all text-sm" />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1">Idade</label>
+                          <input {...register("age")} placeholder="10 anos" className="w-full p-4 rounded-xl border border-white/10 bg-white/5 focus:border-blue-600 outline-none transition-all text-sm" />
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1">WhatsApp Responsável</label>
+                        <input {...register("whatsapp")} placeholder="(00) 00000-0000" className="w-full p-4 rounded-xl border border-white/10 bg-white/5 focus:border-blue-600 outline-none transition-all text-sm" />
+                      </div>
+                      <motion.button 
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        type="submit" 
+                        className="w-full bg-blue-600 hover:bg-blue-700 text-white p-5 rounded-xl font-black uppercase tracking-widest text-sm transition-all shadow-xl shadow-blue-600/20"
+                      >
+                        Confirmar Aula Grátis
+                      </motion.button>
+                    </form>
+                  </motion.div>
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
