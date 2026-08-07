@@ -120,12 +120,18 @@ function Index() {
               { name: "Prof. Ana Souza", role: "Preparadora Física", desc: "Especialista em performance e prevenção de lesões em jovens." },
               { name: "Prof. Lucas Mendes", role: "Treinador de Goleiros", desc: "Metodologia moderna de treinamento específico para goleiros." }
             ].map((staff, i) => (
-              <div key={i} className="bg-white p-8 rounded-3xl shadow-sm text-center">
-                <div className="w-24 h-24 bg-slate-200 rounded-full mx-auto mb-6" />
-                <h3 className="text-xl font-bold">{staff.name}</h3>
-                <p className="text-blue-600 text-sm font-bold uppercase tracking-wide mt-1">{staff.role}</p>
-                <p className="text-slate-600 mt-4 text-sm">{staff.desc}</p>
-              </div>
+              <motion.div 
+                key={i} 
+                whileHover={{ y: -5 }}
+                className="bg-white p-10 rounded-[2rem] shadow-xl text-center border-b-4 border-blue-600 transition-all"
+              >
+                <div className="w-28 h-28 bg-slate-100 rounded-full mx-auto mb-8 border-4 border-slate-50 overflow-hidden shadow-inner flex items-center justify-center">
+                  <Users className="w-12 h-12 text-blue-600/30" />
+                </div>
+                <h3 className="text-2xl font-black italic uppercase tracking-tighter">{staff.name}</h3>
+                <div className="bg-blue-600/10 text-blue-600 text-xs font-black uppercase tracking-widest mt-3 py-1 px-3 rounded-full inline-block">{staff.role}</div>
+                <p className="text-slate-500 mt-6 text-sm leading-relaxed font-medium">{staff.desc}</p>
+              </motion.div>
             ))}
           </div>
         </div>
