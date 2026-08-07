@@ -490,7 +490,18 @@ function Index() {
               </div>
 
               {/* Main Content: Categories & Form */}
-              <div className="flex-1 p-8 md:p-12 overflow-y-auto max-h-[80vh] md:max-h-none scrollbar-hide">
+              <div className="flex-1 p-8 md:p-12 overflow-y-auto max-h-[80vh] md:max-h-none scrollbar-hide relative">
+                {/* Background Image requested by user */}
+                <div className="absolute inset-0 z-0 overflow-hidden">
+                  <img 
+                    src={bookingBgAsset.url} 
+                    className="w-full h-full object-cover opacity-20 grayscale brightness-50"
+                    alt="Background"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900/40 to-slate-900/90" />
+                </div>
+                
+                <div className="relative z-10 h-full flex flex-col">
                 {!selectedCategory ? (
                   <motion.div
                     initial={{ opacity: 0, x: 20 }}
