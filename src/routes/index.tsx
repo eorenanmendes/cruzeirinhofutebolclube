@@ -13,6 +13,7 @@ import img4Asset from "@/assets/image-4.png.asset.json";
 import img5Asset from "@/assets/image-5.png.asset.json";
 import imgWebpAsset from "@/assets/image.webp.asset.json";
 import bookingBgAsset from "@/assets/team-group.png.asset.json";
+import ballAsset from "@/assets/soccer-ball.png.asset.json";
 
 const schema = z.object({
   name: z.string().min(2),
@@ -206,7 +207,7 @@ function Index() {
           >
             <div className="absolute inset-0 bg-blue-600 rounded-[3rem] rotate-3 opacity-20 blur-2xl"></div>
             <img 
-              src={img2Asset.url} 
+              src={ballAsset.url} 
               className="relative z-10 w-full aspect-[4/5] object-cover rounded-[3rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" 
               alt="Atleta em treinamento" 
             />
@@ -229,8 +230,7 @@ function Index() {
               { src: img2Asset.url, title: "Grandes Conquistas", desc: "Campeões com dedicação e talento." },
               { src: img3Asset.url, title: "Formação de Elite", desc: "Preparação para o topo do futebol." },
               { src: img4Asset.url, title: "Ambiente Profissional", desc: "Vestiários e estrutura de primeira linha." },
-              { src: img5Asset.url, title: "Reconhecimento", desc: "Medalhas que coroam o esforço diário." },
-              { src: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&q=80&w=800", title: "Paixão pelo Esporte", desc: "Onde o sonho se torna realidade." }
+              { src: img5Asset.url, title: "Reconhecimento", desc: "Medalhas que coroam o esforço diário." }
             ].map((img, idx) => (
               <motion.div
                 key={idx}
