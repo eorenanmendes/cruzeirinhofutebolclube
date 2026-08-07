@@ -397,7 +397,9 @@ function Index() {
 
       {/* Footer CTA */}
       <section className="py-32 px-6 bg-slate-950 text-white text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none"></div>
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <img src={img2Asset.url} className="w-full h-full object-cover grayscale brightness-50" />
+        </div>
         <div className="relative z-10">
           <h2 className="text-6xl md:text-8xl font-black mb-8 italic uppercase tracking-tighter">Prepare seu filho para o topo.</h2>
           <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">Não perca a chance de transformar o futuro do seu pequeno atleta com a melhor estrutura de treinamento.</p>
