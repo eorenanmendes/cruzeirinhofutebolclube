@@ -86,7 +86,7 @@ function Index() {
       {/* Categorias */}
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Nossas Categorias</h2>
+          <h2 className="text-4xl md:text-5xl font-black text-center mb-16 italic uppercase tracking-tighter">Nossas Categorias</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { title: "Sub-7", age: "5 a 7 anos", desc: "Introdução lúdica e fundamentos básicos do futebol." },
