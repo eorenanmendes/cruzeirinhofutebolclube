@@ -30,6 +30,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [isBookingOpen, setIsBookingOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isMapOpen, setIsMapOpen] = React.useState(false);
   const [selectedCategory, setSelectedCategory] = React.useState<string | null>(null);
 
