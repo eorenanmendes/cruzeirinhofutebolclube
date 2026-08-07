@@ -84,7 +84,7 @@ function Index() {
           >
             Matrículas Abertas
           </motion.div>
-          <h1 className="text-6xl md:text-9xl font-black mb-8 leading-tight tracking-tighter italic uppercase">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight tracking-tighter italic uppercase">
             Formação Elite e<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-800 animate-pulse">
               Alta Performance.
