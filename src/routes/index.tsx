@@ -74,7 +74,7 @@ function Index() {
           
           <div className="hidden md:flex items-center gap-8">
             <a href="#categorias" className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Categorias</a>
-            <a href="#equipe" className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Equipe</a>
+            
             <button onClick={() => setIsBookingOpen(true)} className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Agendar Aula</button>
             <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-black uppercase tracking-widest text-xs transition shadow-lg shadow-blue-600/20">
               Contato
@@ -250,37 +250,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Equipe Técnica */}
-      <section id="equipe" className="py-24 px-6 bg-black">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col items-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-center italic uppercase tracking-tighter relative">
-              <span className="absolute -top-6 -left-12 text-8xl opacity-5 text-blue-500 select-none">EQUIPE</span>
-              Nossa Equipe Técnica
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { name: "Prof. Ricardo Silva", role: "Coordenador Técnico", desc: "Mais de 15 anos de experiência na formação de atletas de base." },
-              { name: "Prof. Ana Souza", role: "Preparadora Física", desc: "Especialista em performance e prevenção de lesões em jovens." },
-              { name: "Prof. Lucas Mendes", role: "Treinador de Goleiros", desc: "Metodologia moderna de treinamento específico para goleiros." }
-            ].map((staff, i) => (
-              <motion.div 
-                key={i} 
-                whileHover={{ y: -5, borderColor: "rgba(37,99,235,1)" }}
-                className="bg-slate-900/30 backdrop-blur-sm p-10 rounded-[2rem] shadow-2xl text-center border-b-4 border-white/5 transition-all group"
-              >
-                <div className="w-28 h-28 bg-white/5 rounded-full mx-auto mb-8 border-4 border-white/5 overflow-hidden shadow-inner flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Users className="w-12 h-12 text-blue-500/30 group-hover:text-blue-500 transition-colors" />
-                </div>
-                <h3 className="text-2xl font-black italic uppercase tracking-tighter group-hover:text-blue-400 transition-colors">{staff.name}</h3>
-                <div className="bg-blue-600/10 text-blue-400 text-xs font-black uppercase tracking-widest mt-3 py-1 px-3 rounded-full inline-block border border-blue-500/20">{staff.role}</div>
-                <p className="text-slate-400 mt-6 text-sm leading-relaxed font-medium">{staff.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-32 px-6 bg-slate-950 text-white text-center relative overflow-hidden">
