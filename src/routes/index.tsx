@@ -212,20 +212,23 @@ function Index() {
           </motion.div>
         </div>
 
-        {/* Galeria 3D Profissional */}
+        {/* Galeria Horizontal (Mobile) / Grade 3D (Desktop) */}
         <div className="max-w-7xl mx-auto mt-32">
           <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-5xl font-black italic uppercase tracking-tighter">Nossa Vivência Profissional</h3>
-            <p className="text-slate-400 mt-4 max-w-2xl mx-auto">Experiência real, conquistas e formação de elite em um ambiente de alto rendimento.</p>
+            <h3 className="text-3xl md:text-5xl font-black italic uppercase tracking-tighter relative">
+              <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-8xl opacity-5 text-blue-500 select-none">GALERIA</span>
+              Nossa Vivência Profissional
+            </h3>
+            <p className="text-slate-400 mt-4 max-w-2xl mx-auto px-6">Experiência real, conquistas e formação de elite em um ambiente de alto rendimento.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 perspective-1000">
+          {/* Container Mobile: Scroll Horizontal | Desktop: Grid */}
+          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-x-auto md:overflow-x-visible pb-12 md:pb-0 px-6 md:px-0 snap-x snap-mandatory scrollbar-hide perspective-1000">
             {[
               { src: img2Asset.url, title: "Grandes Conquistas", desc: "Campeões com dedicação e talento." },
               { src: img3Asset.url, title: "Formação de Elite", desc: "Preparação para o topo do futebol." },
               { src: img4Asset.url, title: "Ambiente Profissional", desc: "Vestiários e estrutura de primeira linha." },
               { src: img5Asset.url, title: "Reconhecimento", desc: "Medalhas que coroam o esforço diário." },
-              { src: imgWebpAsset.url, title: "Prontos para o Jogo", desc: "Uniformes e atletas padrão série A." },
               { src: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&q=80&w=800", title: "Paixão pelo Esporte", desc: "Onde o sonho se torna realidade." }
             ].map((img, idx) => (
               <motion.div
@@ -241,7 +244,7 @@ function Index() {
                   boxShadow: "0 20px 40px rgba(37,99,235,0.3)"
                 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="relative group rounded-[2rem] overflow-hidden border border-white/10 bg-slate-900 shadow-2xl preserve-3d cursor-pointer"
+                className="relative group rounded-[2rem] overflow-hidden border border-white/10 bg-slate-900 shadow-2xl preserve-3d cursor-pointer min-w-[280px] md:min-w-0 snap-center"
               >
                 <img 
                   src={img.src} 
