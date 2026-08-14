@@ -124,13 +124,25 @@ function Capoeira() {
               Nossa Roda
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl relative aspect-[4/5] md:aspect-square">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <motion.div 
+              whileHover={{ scale: 1.05, rotate: -1 }}
+              className="rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl relative aspect-[4/5] md:aspect-square"
+            >
               <img src={capoeira1.url} className="w-full h-full object-cover" alt="Roda de Capoeira 1" />
-            </div>
-            <div className="rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl relative aspect-[4/5] md:aspect-square">
+            </motion.div>
+            <motion.div 
+              whileHover={{ scale: 1.05, rotate: 1 }}
+              className="rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl relative aspect-[4/5] md:aspect-square"
+            >
               <img src={capoeira2.url} className="w-full h-full object-cover" alt="Roda de Capoeira 2" />
-            </div>
+            </motion.div>
+            <motion.div 
+              whileHover={{ scale: 1.05, rotate: -1 }}
+              className="rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl relative aspect-[4/5] md:aspect-square"
+            >
+              <img src={capoeira3.url} className="w-full h-full object-cover" alt="Roda de Capoeira 3" />
+            </motion.div>
           </div>
         </div>
       </section>
