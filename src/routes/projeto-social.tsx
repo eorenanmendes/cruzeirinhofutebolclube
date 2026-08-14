@@ -6,6 +6,7 @@ import logoAsset from "@/assets/logo.asset.json";
 import socialGroup1 from "@/assets/social-group-1.png.asset.json";
 import socialGroup2 from "@/assets/social-group-2.png.asset.json";
 import socialLocker from "@/assets/social-team-locker.png.asset.json";
+import socialTeamGroup from "@/assets/social-team-group.png.asset.json";
 
 export const Route = createFileRoute("/projeto-social")({
   component: ProjetoSocial,
