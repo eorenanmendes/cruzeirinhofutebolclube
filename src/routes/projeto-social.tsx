@@ -15,10 +15,10 @@ function ProjetoSocial() {
       <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="Logo" className="w-10 h-10" />
+            <img src={logoAsset.url} alt="Logo" className="w-10 h-10 object-contain" />
             <div className="flex flex-col">
-              <span className="text-lg font-bold tracking-tight text-slate-900 leading-none">Projeto Social</span>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-rose-500">Cruzeirinho FC</span>
+              <span className="text-lg font-black italic uppercase tracking-tighter text-slate-900 leading-none">Projeto Social</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-rose-500">Cruzeirinho FC</span>
             </div>
           </div>
           
@@ -110,8 +110,44 @@ function ProjetoSocial() {
         </div>
       </section>
 
+      {/* Atividades e Como Funciona */}
+      <section className="py-32 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 tracking-tight italic uppercase">Nossas Atividades</h2>
+              <p className="text-xl text-slate-600 mb-10 leading-relaxed">Oferecemos um suporte completo que vai muito além do treinamento esportivo, cuidando do desenvolvimento humano em sua totalidade.</p>
+              <div className="space-y-6">
+                {[
+                  "Treinos de Futebol Gratuitos",
+                  "Acompanhamento Psicossocial",
+                  "Palestras Educativas e Cidadania",
+                  "Eventos Comunitários e Festividades",
+                  "Suporte Alimentar para Famílias"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4">
+                    <div className="w-2 h-2 rounded-full bg-rose-500" />
+                    <span className="text-lg font-bold text-slate-800 italic uppercase tracking-tighter">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-rose-50 p-12 rounded-[3rem] border border-rose-100">
+              <h3 className="text-2xl font-bold text-rose-600 mb-6 italic uppercase tracking-tight">Onde queremos chegar</h3>
+              <p className="text-lg text-slate-700 leading-relaxed mb-8">
+                Nossa meta é atingir mais de 500 crianças na região, transformando o Jardim Maringá em um polo de educação e esporte, reduzindo drasticamente a evasão escolar.
+              </p>
+              <div className="flex gap-4 items-baseline">
+                <span className="text-5xl font-black text-rose-500 italic">85%</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Aproveitamento Escolar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Galeria Premium */}
-      <section id="galeria" className="py-32 px-6 bg-white overflow-hidden">
+      <section id="galeria" className="py-32 px-6 bg-[#fafafa] overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
             <span className="text-rose-500 font-bold uppercase tracking-widest text-xs">Momentos Inesquecíveis</span>

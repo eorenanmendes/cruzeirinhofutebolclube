@@ -144,10 +144,10 @@ function Index() {
       </section>
 
       {/* Nossos Projetos */}
-      <section id="projetos" className="py-32 px-6 bg-black relative overflow-hidden">
+      <section id="projetos" className="py-32 px-6 bg-black relative overflow-hidden border-b border-white/5">
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex flex-col items-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter relative">
+          <div className="flex flex-col items-center mb-20 text-center">
+            <h2 className="text-5xl md:text-8xl font-black italic uppercase tracking-tighter relative">
               <span className="absolute -top-10 -left-12 text-9xl opacity-5 text-blue-500 select-none">PROJETOS</span>
               Conheça Nossos Projetos
             </h2>
@@ -159,7 +159,7 @@ function Index() {
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             {[
               { 
-                title: "Projeto Social", 
+                title: "PROJETO SOCIAL", 
                 desc: "Impacto, inclusão e esperança através do esporte na comunidade.", 
                 icon: Heart, 
                 color: "rose", 
@@ -167,7 +167,7 @@ function Index() {
                 img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop"
               },
               { 
-                title: "Jiu-Jitsu", 
+                title: "🥋 JIU-JITSU", 
                 desc: "Disciplina, técnica e força na nossa elite team de artes marciais.", 
                 icon: Shield, 
                 color: "amber", 
@@ -175,7 +175,7 @@ function Index() {
                 img: "https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?q=80&w=2070&auto=format&fit=crop"
               },
               { 
-                title: "Clube Escola", 
+                title: "⚽ PROJETO CLUBE ESCOLA", 
                 desc: "Formação de elite e alto rendimento para o futebol profissional.", 
                 icon: Trophy, 
                 color: "blue", 
@@ -574,7 +574,7 @@ function Index() {
                   className="text-lg font-black italic uppercase tracking-tighter text-rose-500"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Projeto Social
+                  PROJETO SOCIAL
                 </a>
                 <a 
                   href="/jiu-jitsu" 
@@ -583,7 +583,7 @@ function Index() {
                   className="text-lg font-black italic uppercase tracking-tighter text-amber-500"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  🥋 Jiu-Jitsu
+                  🥋 JIU-JITSU
                 </a>
                 <a 
                   href="/projeto-clube-escola" 
@@ -592,7 +592,7 @@ function Index() {
                   className="text-lg font-black italic uppercase tracking-tighter text-blue-500"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  ⚽ Clube Escola
+                  ⚽ PROJETO CLUBE ESCOLA
                 </a>
               </div>
               <div className="flex justify-center gap-6 text-slate-500">

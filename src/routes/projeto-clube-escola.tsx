@@ -15,7 +15,7 @@ function ProjetoClubeEscola() {
       <nav className="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="Logo" className="w-10 h-10" />
+            <img src={logoAsset.url} alt="Logo" className="w-10 h-10 object-contain" />
             <div className="flex flex-col">
               <span className="text-xl font-black italic uppercase tracking-tighter leading-none">Clube Escola</span>
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-500">Formação Profissional</span>
@@ -31,7 +31,7 @@ function ProjetoClubeEscola() {
 
           <Link to="/" className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-white/40 hover:text-blue-500 transition-colors px-6 py-2 rounded-full border border-white/10 hover:border-blue-500/50">
             <ChevronLeft className="w-3 h-3" />
-            Voltar
+            Voltar ao Cruzeirinho
           </Link>
         </div>
       </nav>
@@ -170,6 +170,31 @@ function ProjetoClubeEscola() {
                    </div>
                  ))}
               </div>
+           </div>
+        </div>
+      </section>
+
+      {/* Equipe Técnica */}
+      <section className="py-40 px-6 bg-slate-900/40">
+        <div className="max-w-7xl mx-auto">
+           <div className="text-center mb-24">
+             <h2 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter">Corpo Técnico</h2>
+             <p className="text-blue-500 mt-4 uppercase tracking-[0.3em] text-xs font-black">Profissionais Formados e Experientes</p>
+           </div>
+           <div className="grid md:grid-cols-3 gap-12">
+              {[
+                { name: "Coord. Técnico", role: "Licença A CBF", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop" },
+                { name: "Prep. Físico", role: "Espec. Fisiologia", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" },
+                { name: "Treinador Goleiros", role: "Ex-Atleta Profissional", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" }
+              ].map((member, i) => (
+                <div key={i} className="text-center group">
+                   <div className="aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/5 mb-8">
+                      <img src={member.img} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt={member.name} />
+                   </div>
+                   <h3 className="text-xl font-black italic uppercase tracking-tighter mb-2">{member.name}</h3>
+                   <p className="text-blue-500 text-[10px] font-black uppercase tracking-widest">{member.role}</p>
+                </div>
+              ))}
            </div>
         </div>
       </section>
