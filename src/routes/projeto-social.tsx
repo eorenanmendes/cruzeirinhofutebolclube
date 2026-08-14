@@ -68,7 +68,7 @@ function ProjetoSocial() {
           >
             <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative z-10">
                <img 
-                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop" 
+                src={socialGroup2.url} 
                 alt="Impacto Social" 
                 className="w-full h-full object-cover"
               />
