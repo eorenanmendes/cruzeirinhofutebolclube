@@ -144,10 +144,10 @@ function Index() {
       </section>
 
       {/* Nossos Projetos */}
-      <section id="projetos" className="py-32 px-6 bg-black relative overflow-hidden">
+      <section id="projetos" className="py-32 px-6 bg-black relative overflow-hidden border-b border-white/5">
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex flex-col items-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter relative">
+          <div className="flex flex-col items-center mb-20 text-center">
+            <h2 className="text-5xl md:text-8xl font-black italic uppercase tracking-tighter relative">
               <span className="absolute -top-10 -left-12 text-9xl opacity-5 text-blue-500 select-none">PROJETOS</span>
               Conheça Nossos Projetos
             </h2>

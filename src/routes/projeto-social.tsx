@@ -15,10 +15,10 @@ function ProjetoSocial() {
       <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="Logo" className="w-10 h-10" />
+            <img src={logoAsset.url} alt="Logo" className="w-10 h-10 object-contain" />
             <div className="flex flex-col">
-              <span className="text-lg font-bold tracking-tight text-slate-900 leading-none">Projeto Social</span>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-rose-500">Cruzeirinho FC</span>
+              <span className="text-lg font-black italic uppercase tracking-tighter text-slate-900 leading-none">Projeto Social</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-rose-500">Cruzeirinho FC</span>
             </div>
           </div>
           

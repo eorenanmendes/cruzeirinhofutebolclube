@@ -15,7 +15,7 @@ function ProjetoClubeEscola() {
       <nav className="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="Logo" className="w-10 h-10" />
+            <img src={logoAsset.url} alt="Logo" className="w-10 h-10 object-contain" />
             <div className="flex flex-col">
               <span className="text-xl font-black italic uppercase tracking-tighter leading-none">Clube Escola</span>
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-500">Formação Profissional</span>
