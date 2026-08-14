@@ -174,7 +174,7 @@ function Index() {
                 title: "🥋 JIU-JITSU", 
                 desc: "Disciplina, técnica e força na nossa elite team de artes marciais.", 
                 icon: Shield, 
-                color: "amber", 
+                color: "blue", 
                 href: "/jiu-jitsu",
                 img: "https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?q=80&w=2070&auto=format&fit=crop"
               },
