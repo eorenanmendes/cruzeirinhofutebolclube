@@ -165,7 +165,7 @@ function Index() {
                 icon: Heart, 
                 color: "rose", 
                 href: "/projeto-social",
-                img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop"
+                img: socialTeamGroup.url
               },
               { 
                 title: "🥋 JIU-JITSU", 
