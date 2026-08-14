@@ -610,6 +610,15 @@ function Index() {
                   JIU-JITSU
                 </a>
                 <a 
+                  href="/capoeira" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-lg font-black italic uppercase tracking-tighter text-emerald-500"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  CAPOEIRA
+                </a>
+                <a 
                   href="/projeto-clube-escola" 
                   target="_blank" 
                   rel="noopener noreferrer"
