@@ -19,6 +19,7 @@ import jiuJitsuHero from "@/assets/jiu-jitsu-hero.png.asset.json";
 import jiuJitsu1 from "@/assets/jiu-jitsu-1.png.asset.json";
 import ce1 from "@/assets/clube-escola-1.png.asset.json";
 import cruzeirinhoHeroTrophy from "@/assets/cruzeirinho-hero-trophy.png.asset.json";
+import capoeiraCard from "@/assets/capoeira-card.png.asset.json";
 
 
 
@@ -189,7 +190,7 @@ function Index() {
                 icon: Users, 
                 color: "blue", 
                 href: "/capoeira",
-                img: jiuJitsuHero.url
+                img: capoeiraCard.url
               },
               { 
                 title: "PROJETO CLUBE ESCOLA", 

@@ -3,7 +3,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Trophy, Users, Shield, ArrowRight, Mail, Phone, MapPin, ChevronLeft, MessageCircle, Star } from "lucide-react";
 import logoAsset from "@/assets/logo.asset.json";
-import jiuJitsuHero from "@/assets/jiu-jitsu-hero.png.asset.json";
+import capoeira1 from "@/assets/capoeira-1.png.asset.json";
+import capoeira2 from "@/assets/capoeira-2.png.asset.json";
+import capoeira3 from "@/assets/capoeira-3.png.asset.json";
 import socialTeamGroup from "@/assets/social-team-group.png.asset.json";
 
 export const Route = createFileRoute("/capoeira")({
@@ -41,8 +43,8 @@ function Capoeira() {
       <section className="relative min-h-screen flex items-center pt-20 px-6 overflow-hidden">
          <div className="absolute inset-0 z-0">
           <img 
-            src={jiuJitsuHero.url} 
-            className="w-full h-full object-cover opacity-40 grayscale"
+            src={capoeira3.url} 
+            className="w-full h-full object-cover opacity-50 grayscale-0"
             alt="Capoeira Training"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent" />
@@ -122,10 +124,12 @@ function Capoeira() {
               Nossa Roda
             </h2>
           </div>
-          <div className="rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl relative aspect-video max-w-4xl mx-auto">
-            <img src={socialTeamGroup.url} className="w-full h-full object-cover grayscale" alt="Roda de Capoeira" />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <p className="text-2xl font-black italic uppercase tracking-widest">Em breve: Novas Fotos</p>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl relative aspect-[4/5] md:aspect-square">
+              <img src={capoeira1.url} className="w-full h-full object-cover" alt="Roda de Capoeira 1" />
+            </div>
+            <div className="rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl relative aspect-[4/5] md:aspect-square">
+              <img src={capoeira2.url} className="w-full h-full object-cover" alt="Roda de Capoeira 2" />
             </div>
           </div>
         </div>
