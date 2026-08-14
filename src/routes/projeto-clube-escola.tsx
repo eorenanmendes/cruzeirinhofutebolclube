@@ -5,6 +5,10 @@ import { Trophy, Users, Shield, ArrowRight, Mail, Phone, MapPin, ChevronLeft, Me
 import logoAsset from "@/assets/logo.asset.json";
 import socialTeamGroup from "@/assets/social-team-group.png.asset.json";
 import clubeEscolaHero from "@/assets/clube-escola-hero.png.asset.json";
+import ce1 from "@/assets/clube-escola-1.png.asset.json";
+import ce2 from "@/assets/clube-escola-2.png.asset.json";
+import ce3 from "@/assets/clube-escola-3.png.asset.json";
+import ce4 from "@/assets/clube-escola-4.png.asset.json";
 
 export const Route = createFileRoute("/projeto-clube-escola")({
   component: ProjetoClubeEscola,
@@ -76,11 +80,6 @@ function ProjetoClubeEscola() {
           </motion.div>
         </div>
         
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
-           <span className="text-[10px] font-black uppercase tracking-widest">Scroll</span>
-           <div className="w-[2px] h-12 bg-gradient-to-b from-blue-600 to-transparent" />
-        </div>
       </section>
 
       {/* Sobre o Clube Escola */}
@@ -176,30 +175,6 @@ function ProjetoClubeEscola() {
         </div>
       </section>
 
-      {/* Equipe Técnica */}
-      <section className="py-40 px-6 bg-slate-900/40">
-        <div className="max-w-7xl mx-auto">
-           <div className="text-center mb-24">
-             <h2 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter">Corpo Técnico</h2>
-             <p className="text-blue-500 mt-4 uppercase tracking-[0.3em] text-xs font-black">Profissionais Formados e Experientes</p>
-           </div>
-           <div className="grid md:grid-cols-3 gap-12">
-              {[
-                { name: "Coord. Técnico", role: "Licença A CBF", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop" },
-                { name: "Prep. Físico", role: "Espec. Fisiologia", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" },
-                { name: "Treinador Goleiros", role: "Ex-Atleta Profissional", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" }
-              ].map((member, i) => (
-                <div key={i} className="text-center group">
-                   <div className="aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/5 mb-8">
-                      <img src={member.img} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt={member.name} />
-                   </div>
-                   <h3 className="text-xl font-black italic uppercase tracking-tighter mb-2">{member.name}</h3>
-                   <p className="text-blue-500 text-[10px] font-black uppercase tracking-widest">{member.role}</p>
-                </div>
-              ))}
-           </div>
-        </div>
-      </section>
 
       {/* Galeria Premium Grid Assimétrica */}
       <section id="galeria" className="py-40 px-6 bg-slate-900/20">
@@ -210,19 +185,19 @@ function ProjetoClubeEscola() {
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
              <motion.div whileHover={{ scale: 0.98 }} className="md:col-span-7 aspect-[16/9] rounded-[3rem] overflow-hidden group relative">
-                <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Galeria" />
+                <img src={ce1.url} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Galeria" />
                 <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity" />
              </motion.div>
              <motion.div whileHover={{ scale: 0.98 }} className="md:col-span-5 aspect-[4/5] rounded-[3rem] overflow-hidden group relative">
-                <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1972&auto=format&fit=crop" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Galeria" />
+                <img src={ce2.url} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Galeria" />
                 <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity" />
              </motion.div>
              <motion.div whileHover={{ scale: 0.98 }} className="md:col-span-5 aspect-[4/5] rounded-[3rem] overflow-hidden group relative">
-                <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?q=80&w=2098&auto=format&fit=crop" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Galeria" />
+                <img src={ce3.url} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Galeria" />
                 <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity" />
              </motion.div>
              <motion.div whileHover={{ scale: 0.98 }} className="md:col-span-7 aspect-[16/9] rounded-[3rem] overflow-hidden group relative">
-                <img src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Galeria" />
+                <img src={ce4.url} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Galeria" />
                 <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity" />
              </motion.div>
           </div>
