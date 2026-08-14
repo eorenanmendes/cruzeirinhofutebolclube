@@ -69,9 +69,14 @@ function JiuJitsu() {
               Transforme sua mente e corpo através da técnica milenar do Jiu-Jitsu. Foco, respeito e evolução constante.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
-              <button className="px-12 py-6 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-black uppercase tracking-widest text-sm transition-all shadow-[0_0_40px_rgba(37,99,235,0.3)] flex items-center justify-center gap-3 group">
+              <a 
+                href="https://wa.me/5511993436066" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-12 py-6 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-black uppercase tracking-widest text-sm transition-all shadow-[0_0_40px_rgba(37,99,235,0.3)] flex items-center justify-center gap-3 group"
+              >
                 Agendar Aula Experimental <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>
