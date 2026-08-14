@@ -3,9 +3,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Trophy, Users, Shield, ArrowRight, Mail, Phone, MapPin, ChevronLeft, MessageCircle, Star } from "lucide-react";
 import logoAsset from "@/assets/logo.asset.json";
-import jiuJitsuTraining1 from "@/assets/jiu-jitsu-training-1.png.asset.json";
-import jiuJitsuTraining2 from "@/assets/jiu-jitsu-training-2.png.asset.json";
-import socialTeamGroup from "@/assets/social-team-group.png.asset.json";
+import jiuJitsu1 from "@/assets/jiu-jitsu-1.png.asset.json";
+import jiuJitsu2 from "@/assets/jiu-jitsu-2.png.asset.json";
+import jiuJitsu3 from "@/assets/jiu-jitsu-3.png.asset.json";
+import jiuJitsu4 from "@/assets/jiu-jitsu-4.png.asset.json";
 import jiuJitsuHero from "@/assets/jiu-jitsu-hero.png.asset.json";
 
 
@@ -30,7 +31,7 @@ function JiuJitsu() {
           <div className="hidden md:flex items-center gap-8">
             <a href="#sobre" className="text-[10px] font-black uppercase tracking-widest hover:text-amber-500 transition-colors">Sobre</a>
             <a href="#metodologia" className="text-[10px] font-black uppercase tracking-widest hover:text-amber-500 transition-colors">Metodologia</a>
-            <a href="#horarios" className="text-[10px] font-black uppercase tracking-widest hover:text-amber-500 transition-colors">Horários</a>
+            
             <a href="#galeria" className="text-[10px] font-black uppercase tracking-widest hover:text-amber-500 transition-colors">Galeria</a>
           </div>
 
@@ -112,53 +113,6 @@ function JiuJitsu() {
         </div>
       </section>
 
-      {/* Horários */}
-      <section id="horarios" className="py-32 px-6 relative">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-20">
-             <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter">Nossos Horários</h2>
-             <p className="text-neutral-500 mt-4 uppercase tracking-widest text-xs font-black">Encontre o melhor momento para treinar</p>
-          </div>
-          
-          <div className="space-y-4">
-             {["Segunda & Quarta", "Terça & Quinta", "Sexta-feira", "Sábado (Open Mat)"].map((day, i) => (
-               <div key={i} className="flex flex-col md:flex-row items-center justify-between p-8 bg-neutral-900 rounded-[2rem] border border-white/5 hover:bg-neutral-800 transition-colors">
-                  <span className="text-2xl font-black italic uppercase tracking-tighter mb-4 md:mb-0">{day}</span>
-                  <div className="flex gap-4">
-                    <span className="px-6 py-2 bg-amber-500/10 text-amber-500 text-xs font-black rounded-full border border-amber-500/20">07:00 — 08:30</span>
-                    <span className="px-6 py-2 bg-neutral-800 text-neutral-400 text-xs font-black rounded-full">19:30 — 21:00</span>
-                  </div>
-               </div>
-             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Professores e Equipe */}
-      <section className="py-32 px-6 bg-neutral-900/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col items-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter text-center">Nossos Mestres</h2>
-            <p className="text-amber-500 mt-4 uppercase tracking-widest text-xs font-black">Liderança e Experiência no Tatame</p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-             <div className="text-center group">
-                <div className="aspect-square rounded-[3rem] overflow-hidden border-2 border-amber-500/20 mb-8 relative">
-                   <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1974&auto=format&fit=crop" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Professor" />
-                </div>
-                <h3 className="text-2xl font-black italic uppercase tracking-tighter mb-2">Mestre Silva</h3>
-                <p className="text-amber-500 text-xs font-black uppercase tracking-widest">Faixa Preta 4º Grau</p>
-             </div>
-             <div className="text-center group">
-                <div className="aspect-square rounded-[3rem] overflow-hidden border-2 border-amber-500/20 mb-8 relative">
-                   <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=1974&auto=format&fit=crop" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Professor" />
-                </div>
-                <h3 className="text-2xl font-black italic uppercase tracking-tighter mb-2">Professor Santos</h3>
-                <p className="text-amber-500 text-xs font-black uppercase tracking-widest">Faixa Preta 1º Grau</p>
-             </div>
-          </div>
-        </div>
-      </section>
 
       {/* Galeria Premium 3D */}
       <section id="galeria" className="py-32 px-6 bg-neutral-900/30 overflow-hidden">
@@ -172,10 +126,10 @@ function JiuJitsu() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 perspective-1000">
             {[
-              jiuJitsuTraining1.url,
-              jiuJitsuTraining2.url,
-              socialTeamGroup.url,
-              "https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=2069&auto=format&fit=crop"
+              jiuJitsu1.url,
+              jiuJitsu2.url,
+              jiuJitsu3.url,
+              jiuJitsu4.url
             ].map((img, i) => (
               <motion.div 
                 key={i}
