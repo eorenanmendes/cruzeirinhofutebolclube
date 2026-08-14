@@ -173,7 +173,7 @@ function Index() {
                 img: socialTeamGroup.url
               },
               { 
-                title: "🥋 JIU-JITSU", 
+                title: "JIU-JITSU", 
                 desc: "Disciplina, técnica e força na nossa elite team de artes marciais.", 
                 icon: Shield, 
                 color: "blue", 
@@ -181,7 +181,7 @@ function Index() {
                 img: jiuJitsu1.url
               },
               { 
-                title: "⚽ PROJETO CLUBE ESCOLA", 
+                title: "PROJETO CLUBE ESCOLA", 
                 desc: "Formação de elite e alto rendimento para o futebol profissional.", 
                 icon: Trophy, 
                 color: "blue", 
