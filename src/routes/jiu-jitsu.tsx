@@ -31,7 +31,7 @@ function JiuJitsu() {
 
           <Link to="/" className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-white/40 hover:text-amber-500 transition-colors px-4 py-2 rounded-lg border border-white/10 hover:border-amber-500/50">
             <ChevronLeft className="w-3 h-3" />
-            Voltar
+            Voltar ao Cruzeirinho
           </Link>
         </div>
       </nav>
