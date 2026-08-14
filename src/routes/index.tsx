@@ -1,7 +1,7 @@
 import * as React from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, MapPin, Trophy, Users, Calendar, MessageCircle, Mail, Menu, X, ChevronRight, Star } from "lucide-react";
+import { ArrowRight, MapPin, Trophy, Users, Calendar, MessageCircle, Mail, Menu, X, ChevronRight, Star, Heart, Shield } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -75,6 +75,7 @@ function Index() {
           </div>
           
           <div className="hidden md:flex items-center gap-8">
+            <a href="#projetos" className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Projetos</a>
             <a href="#categorias" className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Categorias</a>
             
             <button onClick={() => setIsBookingOpen(true)} className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Agendar Aula</button>
@@ -142,24 +143,90 @@ function Index() {
         </motion.div>
       </section>
 
-      {/* Categorias */}
-      <section id="categorias" className="py-24 px-6 bg-black relative">
+      {/* Nossos Projetos */}
+      <section id="projetos" className="py-32 px-6 bg-black relative overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="flex flex-col items-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter relative">
+              <span className="absolute -top-10 -left-12 text-9xl opacity-5 text-blue-500 select-none">PROJETOS</span>
+              Conheça Nossos Projetos
+            </h2>
+            <p className="text-slate-500 mt-6 font-bold uppercase tracking-widest text-center max-w-2xl">
+              Experiências completas e profissionais para cada modalidade e objetivo.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+            {[
+              { 
+                title: "Projeto Social", 
+                desc: "Impacto, inclusão e esperança através do esporte na comunidade.", 
+                icon: Heart, 
+                color: "rose", 
+                href: "/projeto-social",
+                img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop"
+              },
+              { 
+                title: "Jiu-Jitsu", 
+                desc: "Disciplina, técnica e força na nossa elite team de artes marciais.", 
+                icon: Shield, 
+                color: "amber", 
+                href: "/jiu-jitsu",
+                img: "https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?q=80&w=2070&auto=format&fit=crop"
+              },
+              { 
+                title: "Clube Escola", 
+                desc: "Formação de elite e alto rendimento para o futebol profissional.", 
+                icon: Trophy, 
+                color: "blue", 
+                href: "/projeto-clube-escola",
+                img: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2093&auto=format&fit=crop"
+              }
+            ].map((proj, i) => (
+              <motion.a 
+                key={i} 
+                href={proj.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -15 }}
+                className="group relative block aspect-[3/4] rounded-[3rem] overflow-hidden border border-white/10"
+              >
+                <img 
+                  src={proj.img} 
+                  alt={proj.title} 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                
+                <div className="absolute bottom-0 left-0 p-10 w-full">
+                  <div className={`w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-6 group-hover:bg-${proj.color}-600 transition-colors duration-500`}>
+                    <proj.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-3xl font-black italic uppercase tracking-tighter mb-3 group-hover:text-blue-500 transition-colors">{proj.title}</h3>
+                  <p className="text-slate-400 font-medium leading-relaxed text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                    {proj.desc}
+                  </p>
+                  <div className="mt-6 flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity">
+                    Explorar Mini-site <ArrowRight className="w-3 h-3" />
+                  </div>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Categorias (Old section title changed to maintain clarity if needed, or keeping it as detailed tech specs) */}
+      <section id="categorias" className="py-24 px-6 bg-slate-950 relative border-t border-white/5">
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="flex flex-col items-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black italic uppercase tracking-tighter relative">
-              <span className="absolute -top-6 -left-8 text-8xl opacity-5 text-blue-500 select-none">TOPICOS</span>
-              Nossas Categorias
+            <h2 className="text-3xl md:text-4xl font-black italic uppercase tracking-tighter relative">
+              <span className="absolute -top-6 -left-8 text-7xl opacity-5 text-blue-500 select-none">NIVEIS</span>
+              Categorias de Treinamento
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { title: "Sub-7", age: "5 a 7 anos", desc: "Introdução lúdica e fundamentos básicos do futebol." },
-              { title: "Sub-9", age: "8 a 9 anos", desc: "Início do desenvolvimento técnico e tática individual." },
-              { title: "Sub-11", age: "10 a 11 anos", desc: "Aprimoramento da leitura de jogo e coordenação motora." },
-              { title: "Sub-13", age: "12 a 13 anos", desc: "Consolidação dos fundamentos e inteligência tática." },
-              { title: "Sub-15", age: "14 a 15 anos", desc: "Preparação competitiva e disciplina atlética profissional." },
-              { title: "Sub-17", age: "16 a 17 anos", desc: "Alta performance e transição para o futebol profissional." }
-            ].map((cat, i) => (
+            {categories.map((cat, i) => (
               <motion.div 
                 key={i} 
                 whileHover={{ y: -12, scale: 1.02 }}
@@ -473,6 +540,7 @@ function Index() {
             <nav className="flex flex-col gap-8">
               {[
                 { label: "Início", href: "#" },
+                { label: "Projetos", href: "#projetos" },
                 { label: "Categorias", href: "#categorias" },
                 { label: "Sobre Nós", href: "#diferenciais" },
                 { label: "Localização", href: "#localizacao" }
@@ -498,6 +566,35 @@ function Index() {
               >
                 Agendar Aula
               </button>
+              <div className="flex flex-col gap-4 py-4">
+                <a 
+                  href="/projeto-social" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-lg font-black italic uppercase tracking-tighter text-rose-500"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Projeto Social
+                </a>
+                <a 
+                  href="/jiu-jitsu" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-lg font-black italic uppercase tracking-tighter text-amber-500"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  🥋 Jiu-Jitsu
+                </a>
+                <a 
+                  href="/projeto-clube-escola" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-lg font-black italic uppercase tracking-tighter text-blue-500"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  ⚽ Clube Escola
+                </a>
+              </div>
               <div className="flex justify-center gap-6 text-slate-500">
                 <a href="https://www.instagram.com/cruzeirinho.fc.1969/" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-6 h-6" />
