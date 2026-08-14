@@ -3,6 +3,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Trophy, Users, Shield, ArrowRight, Mail, Phone, MapPin, ChevronLeft, MessageCircle, Star } from "lucide-react";
 import logoAsset from "@/assets/logo.asset.json";
+import jiuJitsuTraining1 from "@/assets/jiu-jitsu-training-1.png.asset.json";
+import jiuJitsuTraining2 from "@/assets/jiu-jitsu-training-2.png.asset.json";
 
 export const Route = createFileRoute("/jiu-jitsu")({
   component: JiuJitsu,
@@ -167,8 +169,8 @@ function JiuJitsu() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 perspective-1000">
             {[
-              "https://images.unsplash.com/photo-1599058917232-d750c18590e7?q=80&w=2069&auto=format&fit=crop",
-              "https://images.unsplash.com/photo-1517438476312-10d79c6777ed?q=80&w=2072&auto=format&fit=crop",
+              jiuJitsuTraining1.url,
+              jiuJitsuTraining2.url,
               "https://images.unsplash.com/photo-1549476464-37392f717551?q=80&w=1974&auto=format&fit=crop",
               "https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=2069&auto=format&fit=crop"
             ].map((img, i) => (

@@ -3,6 +3,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Heart, Users, Globe, ArrowRight, Mail, Phone, MapPin, ChevronLeft, MessageCircle } from "lucide-react";
 import logoAsset from "@/assets/logo.asset.json";
+import socialGroup1 from "@/assets/social-group-1.png.asset.json";
+import socialGroup2 from "@/assets/social-group-2.png.asset.json";
+import socialLocker from "@/assets/social-team-locker.png.asset.json";
 
 export const Route = createFileRoute("/projeto-social")({
   component: ProjetoSocial,
@@ -65,7 +68,7 @@ function ProjetoSocial() {
           >
             <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative z-10">
                <img 
-                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop" 
+                src={socialGroup2.url} 
                 alt="Impacto Social" 
                 className="w-full h-full object-cover"
               />
@@ -156,15 +159,15 @@ function ProjetoSocial() {
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
             <motion.div whileHover={{ scale: 0.98 }} className="md:col-span-8 md:row-span-2 rounded-[2.5rem] overflow-hidden group relative">
-              <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Galeria" />
+              <img src={socialGroup1.url} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Galeria" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-10">
-                <p className="text-white font-bold text-xl italic uppercase tracking-tighter">Treino Comunitário</p>
+                <p className="text-white font-bold text-xl italic uppercase tracking-tighter">Comunidade e União</p>
               </div>
             </motion.div>
             <motion.div whileHover={{ scale: 0.98 }} className="md:col-span-4 md:row-span-1 rounded-[2.5rem] overflow-hidden group relative">
-              <img src="https://images.unsplash.com/photo-1543351611-58f69d7c1781?q=80&w=1974&auto=format&fit=crop" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Galeria" />
+              <img src={socialLocker.url} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Galeria" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                <p className="text-white font-bold text-lg italic uppercase tracking-tighter">União e Garra</p>
+                <p className="text-white font-bold text-lg italic uppercase tracking-tighter">Nossos Craques</p>
               </div>
             </motion.div>
             <motion.div whileHover={{ scale: 0.98 }} className="md:col-span-4 md:row-span-1 rounded-[2.5rem] overflow-hidden group relative">
