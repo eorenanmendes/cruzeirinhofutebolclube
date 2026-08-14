@@ -3,6 +3,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Trophy, Users, Shield, ArrowRight, Mail, Phone, MapPin, ChevronLeft, MessageCircle, Star } from "lucide-react";
 import logoAsset from "@/assets/logo.asset.json";
+import jiuJitsuTraining1 from "@/assets/jiu-jitsu-training-1.png.asset.json";
+import jiuJitsuTraining2 from "@/assets/jiu-jitsu-training-2.png.asset.json";
 
 export const Route = createFileRoute("/jiu-jitsu")({
   component: JiuJitsu,
