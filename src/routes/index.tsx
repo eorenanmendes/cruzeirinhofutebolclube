@@ -159,7 +159,7 @@ function Index() {
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             {[
               { 
-                title: "Projeto Social", 
+                title: "PROJETO SOCIAL", 
                 desc: "Impacto, inclusão e esperança através do esporte na comunidade.", 
                 icon: Heart, 
                 color: "rose", 
@@ -167,7 +167,7 @@ function Index() {
                 img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop"
               },
               { 
-                title: "Jiu-Jitsu", 
+                title: "🥋 JIU-JITSU", 
                 desc: "Disciplina, técnica e força na nossa elite team de artes marciais.", 
                 icon: Shield, 
                 color: "amber", 
@@ -175,7 +175,7 @@ function Index() {
                 img: "https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?q=80&w=2070&auto=format&fit=crop"
               },
               { 
-                title: "Clube Escola", 
+                title: "⚽ PROJETO CLUBE ESCOLA", 
                 desc: "Formação de elite e alto rendimento para o futebol profissional.", 
                 icon: Trophy, 
                 color: "blue", 
