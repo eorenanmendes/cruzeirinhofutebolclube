@@ -544,19 +544,23 @@ function Index() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[100] bg-black flex flex-col p-8"
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-2xl flex flex-col p-8 md:p-12"
           >
-            <div className="flex justify-between items-center mb-12">
-              <div className="flex items-center gap-3">
-                <img src={logoAsset.url} alt="Logo" className="w-10 h-10" />
-                <span className="text-xl font-black italic uppercase tracking-tighter">Cruzeirinho</span>
+            <div className="flex justify-between items-center mb-16 md:mb-20">
+              <div className="flex items-center gap-4">
+                <img src={logoAsset.url} alt="Logo" className="w-12 h-12" />
+                <div className="flex flex-col">
+                  <span className="text-xl font-black italic uppercase tracking-tighter leading-none">Cruzeirinho</span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-500">Futebol Clube</span>
+                </div>
               </div>
-              <button onClick={() => setIsMenuOpen(false)} className="p-2 bg-white/5 rounded-full">
+              <button onClick={() => setIsMenuOpen(false)} className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors border border-white/10">
                 <X className="w-6 h-6 text-white" />
               </button>
             </div>
 
-            <nav className="flex flex-col gap-8">
+
+            <nav className="flex flex-col gap-6 md:gap-8 overflow-y-auto pr-4 scrollbar-hide">
               {[
                 { label: "Início", href: "#" },
                 { label: "Projetos", href: "#projetos" },
@@ -576,7 +580,7 @@ function Index() {
               ))}
             </nav>
 
-            <div className="mt-auto pt-8 border-t border-white/10 flex flex-col gap-4">
+            <div className="mt-auto pt-8 border-t border-white/10 flex flex-col gap-6">
               <button 
                 onClick={() => {
                   setIsMenuOpen(false);
