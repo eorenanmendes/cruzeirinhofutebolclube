@@ -16,6 +16,7 @@ import bookingBgAsset from "@/assets/team-group.png.asset.json";
 import ballAsset from "@/assets/soccer-ball.png.asset.json";
 import socialTeamGroup from "@/assets/social-team-group.png.asset.json";
 import jiuJitsuHero from "@/assets/jiu-jitsu-hero.png.asset.json";
+import ce1 from "@/assets/clube-escola-1.png.asset.json";
 
 
 const schema = z.object({
@@ -184,7 +185,7 @@ function Index() {
                 icon: Trophy, 
                 color: "blue", 
                 href: "/projeto-clube-escola",
-                img: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2093&auto=format&fit=crop"
+                img: ce1.url
               }
             ].map((proj, i) => (
               <motion.a 
