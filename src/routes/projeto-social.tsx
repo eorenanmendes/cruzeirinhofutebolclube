@@ -6,6 +6,7 @@ import logoAsset from "@/assets/logo.asset.json";
 import socialGroup1 from "@/assets/social-group-1.png.asset.json";
 import socialGroup2 from "@/assets/social-group-2.png.asset.json";
 import socialLocker from "@/assets/social-team-locker.png.asset.json";
+import socialTeamGroup from "@/assets/social-team-group.png.asset.json";
 
 export const Route = createFileRoute("/projeto-social")({
   component: ProjetoSocial,
@@ -171,9 +172,9 @@ function ProjetoSocial() {
               </div>
             </motion.div>
             <motion.div whileHover={{ scale: 0.98 }} className="md:col-span-4 md:row-span-1 rounded-[2.5rem] overflow-hidden group relative">
-              <img src="https://images.unsplash.com/photo-1526232762683-21758f0d70e8?q=80&w=2071&auto=format&fit=crop" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Galeria" />
+              <img src={socialTeamGroup.url} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Galeria" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                <p className="text-white font-bold text-lg italic uppercase tracking-tighter">Futuro Craque</p>
+                <p className="text-white font-bold text-lg italic uppercase tracking-tighter">Nosso Time</p>
               </div>
             </motion.div>
           </div>

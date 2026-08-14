@@ -14,6 +14,7 @@ import img5Asset from "@/assets/image-5.png.asset.json";
 import imgWebpAsset from "@/assets/image.webp.asset.json";
 import bookingBgAsset from "@/assets/team-group.png.asset.json";
 import ballAsset from "@/assets/soccer-ball.png.asset.json";
+import socialTeamGroup from "@/assets/social-team-group.png.asset.json";
 
 const schema = z.object({
   name: z.string().min(2),
@@ -164,7 +165,7 @@ function Index() {
                 icon: Heart, 
                 color: "rose", 
                 href: "/projeto-social",
-                img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop"
+                img: socialTeamGroup.url
               },
               { 
                 title: "🥋 JIU-JITSU", 
@@ -284,6 +285,7 @@ function Index() {
           {/* Container Mobile: Scroll Horizontal | Desktop: Grid */}
           <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-x-auto md:overflow-x-visible pb-12 md:pb-0 px-6 md:px-0 snap-x snap-mandatory scrollbar-hide perspective-1000">
             {[
+              { src: socialTeamGroup.url, title: "Nossa Família", desc: "União e raça dentro do nosso CT." },
               { src: img2Asset.url, title: "Grandes Conquistas", desc: "Campeões com dedicação e talento." },
               { src: img3Asset.url, title: "Formação de Elite", desc: "Preparação para o topo do futebol." },
               { src: img4Asset.url, title: "Ambiente Profissional", desc: "Vestiários e estrutura de primeira linha." },

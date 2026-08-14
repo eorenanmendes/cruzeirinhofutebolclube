@@ -5,6 +5,7 @@ import { Trophy, Users, Shield, ArrowRight, Mail, Phone, MapPin, ChevronLeft, Me
 import logoAsset from "@/assets/logo.asset.json";
 import jiuJitsuTraining1 from "@/assets/jiu-jitsu-training-1.png.asset.json";
 import jiuJitsuTraining2 from "@/assets/jiu-jitsu-training-2.png.asset.json";
+import socialTeamGroup from "@/assets/social-team-group.png.asset.json";
 
 export const Route = createFileRoute("/jiu-jitsu")({
   component: JiuJitsu,
@@ -171,7 +172,7 @@ function JiuJitsu() {
             {[
               jiuJitsuTraining1.url,
               jiuJitsuTraining2.url,
-              "https://images.unsplash.com/photo-1549476464-37392f717551?q=80&w=1974&auto=format&fit=crop",
+              socialTeamGroup.url,
               "https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=2069&auto=format&fit=crop"
             ].map((img, i) => (
               <motion.div 
