@@ -165,7 +165,7 @@ function Index() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
             {[
               { 
                 title: "PROJETO SOCIAL", 
@@ -182,6 +182,14 @@ function Index() {
                 color: "blue", 
                 href: "/jiu-jitsu",
                 img: jiuJitsu1.url
+              },
+              { 
+                title: "CAPOEIRA", 
+                desc: "Cultura, ritmo e movimento em uma arte genuinamente brasileira.", 
+                icon: Users, 
+                color: "blue", 
+                href: "/capoeira",
+                img: jiuJitsuHero.url
               },
               { 
                 title: "PROJETO CLUBE ESCOLA", 
