@@ -1,7 +1,7 @@
 import * as React from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { Heart, Users, Globe, ArrowRight, Instagram, Mail, Phone, MapPin, ChevronLeft } from "lucide-react";
+import { Heart, Users, Globe, ArrowRight, Mail, Phone, MapPin, ChevronLeft, MessageCircle } from "lucide-react";
 import logoAsset from "@/assets/logo.asset.json";
 
 export const Route = createFileRoute("/projeto-social")({
