@@ -16,6 +16,7 @@ import bookingBgAsset from "@/assets/team-group.png.asset.json";
 import ballAsset from "@/assets/soccer-ball.png.asset.json";
 import socialTeamGroup from "@/assets/social-team-group.png.asset.json";
 import jiuJitsuHero from "@/assets/jiu-jitsu-hero.png.asset.json";
+import jiuJitsu1 from "@/assets/jiu-jitsu-1.png.asset.json";
 import ce1 from "@/assets/clube-escola-1.png.asset.json";
 
 
@@ -177,7 +178,7 @@ function Index() {
                 icon: Shield, 
                 color: "blue", 
                 href: "/jiu-jitsu",
-                img: "https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?q=80&w=2070&auto=format&fit=crop"
+                img: jiuJitsu1.url
               },
               { 
                 title: "⚽ PROJETO CLUBE ESCOLA", 
