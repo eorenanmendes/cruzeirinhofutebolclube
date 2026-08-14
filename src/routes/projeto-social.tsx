@@ -21,7 +21,7 @@ function ProjetoSocial() {
           <div className="flex items-center gap-3">
             <img src={logoAsset.url} alt="Logo" className="w-10 h-10 object-contain" />
             <div className="flex flex-col">
-              <span className="text-lg font-black italic uppercase tracking-tighter text-slate-900 leading-none">Projeto Social</span>
+              <span className="text-base font-black italic uppercase tracking-tighter text-slate-900 leading-none">Projeto Social</span>
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-rose-500">Cruzeirinho FC</span>
             </div>
           </div>
