@@ -75,6 +75,7 @@ function Index() {
           </div>
           
           <div className="hidden md:flex items-center gap-8">
+            <a href="#projetos" className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Projetos</a>
             <a href="#categorias" className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Categorias</a>
             
             <button onClick={() => setIsBookingOpen(true)} className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Agendar Aula</button>
