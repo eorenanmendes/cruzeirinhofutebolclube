@@ -15,6 +15,8 @@ import imgWebpAsset from "@/assets/image.webp.asset.json";
 import bookingBgAsset from "@/assets/team-group.png.asset.json";
 import ballAsset from "@/assets/soccer-ball.png.asset.json";
 import socialTeamGroup from "@/assets/social-team-group.png.asset.json";
+import jiuJitsuHero from "@/assets/jiu-jitsu-hero.png.asset.json";
+
 
 const schema = z.object({
   name: z.string().min(2),
@@ -95,7 +97,8 @@ function Index() {
       <section className="relative min-h-screen flex flex-col items-start justify-center p-6 md:p-24 bg-slate-950 text-white overflow-hidden py-32">
         <div className="absolute inset-0 z-0">
           <img 
-            src={img2Asset.url} 
+            src={jiuJitsuHero.url} 
+
             className="w-full h-full object-cover opacity-30"
             alt="Soccer Field"
           />
