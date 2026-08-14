@@ -18,6 +18,8 @@ import socialTeamGroup from "@/assets/social-team-group.png.asset.json";
 import jiuJitsuHero from "@/assets/jiu-jitsu-hero.png.asset.json";
 import jiuJitsu1 from "@/assets/jiu-jitsu-1.png.asset.json";
 import ce1 from "@/assets/clube-escola-1.png.asset.json";
+import cruzeirinhoHeroTrophy from "@/assets/cruzeirinho-hero-trophy.png.asset.json";
+
 
 
 const schema = z.object({
@@ -99,7 +101,8 @@ function Index() {
       <section className="relative min-h-screen flex flex-col items-start justify-center p-6 md:p-24 bg-slate-950 text-white overflow-hidden py-32">
         <div className="absolute inset-0 z-0">
           <img 
-            src={jiuJitsuHero.url} 
+            src={cruzeirinhoHeroTrophy.url} 
+
 
             className="w-full h-full object-cover opacity-30"
             alt="Soccer Field"
