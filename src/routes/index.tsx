@@ -568,7 +568,8 @@ function Index() {
                   key={i}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-3xl font-black italic uppercase tracking-tighter hover:text-blue-500 transition-colors"
+                  className="text-2xl font-black italic uppercase tracking-tighter hover:text-blue-500 transition-colors"
+
                 >
                   {link.label}
                 </a>
