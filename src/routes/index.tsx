@@ -566,6 +566,35 @@ function Index() {
               >
                 Agendar Aula
               </button>
+              <div className="flex flex-col gap-4 py-4">
+                <a 
+                  href="/projeto-social" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-lg font-black italic uppercase tracking-tighter text-rose-500"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Projeto Social
+                </a>
+                <a 
+                  href="/jiu-jitsu" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-lg font-black italic uppercase tracking-tighter text-amber-500"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  🥋 Jiu-Jitsu
+                </a>
+                <a 
+                  href="/projeto-clube-escola" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-lg font-black italic uppercase tracking-tighter text-blue-500"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  ⚽ Clube Escola
+                </a>
+              </div>
               <div className="flex justify-center gap-6 text-slate-500">
                 <a href="https://www.instagram.com/cruzeirinho.fc.1969/" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-6 h-6" />
