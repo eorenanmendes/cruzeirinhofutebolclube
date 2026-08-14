@@ -56,9 +56,14 @@ function ProjetoSocial() {
               Nosso projeto social vai além das quatro linhas, focando na educação, cidadania e no futuro das nossas crianças na Zona Leste.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-rose-500 hover:bg-rose-600 text-white rounded-2xl font-bold transition-all shadow-xl shadow-rose-200 flex items-center gap-3 group">
+              <a 
+                href="https://wa.me/5511993436066" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-rose-500 hover:bg-rose-600 text-white rounded-2xl font-bold transition-all shadow-xl shadow-rose-200 flex items-center gap-3 group"
+              >
                 Conheça o Projeto <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </div>
           </motion.div>
           <motion.div
@@ -214,7 +219,14 @@ function ProjetoSocial() {
                 <input type="text" placeholder="Seu Nome" className="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-rose-500 outline-none transition-all" />
                 <input type="email" placeholder="Seu E-mail" className="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-rose-500 outline-none transition-all" />
                 <textarea placeholder="Como você deseja ajudar?" className="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-rose-500 outline-none transition-all h-32" />
-                <button className="w-full py-5 bg-rose-500 hover:bg-rose-600 text-white rounded-xl font-bold transition-all uppercase tracking-widest text-sm">Enviar Mensagem</button>
+                <a 
+                  href="https://wa.me/5511993436066" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-full inline-block text-center py-5 bg-rose-500 hover:bg-rose-600 text-white rounded-xl font-bold transition-all uppercase tracking-widest text-sm"
+                >
+                  Enviar Mensagem
+                </a>
              </form>
           </div>
         </div>

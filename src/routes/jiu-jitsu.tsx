@@ -69,9 +69,14 @@ function JiuJitsu() {
               Transforme sua mente e corpo através da técnica milenar do Jiu-Jitsu. Foco, respeito e evolução constante.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
-              <button className="px-12 py-6 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-black uppercase tracking-widest text-sm transition-all shadow-[0_0_40px_rgba(37,99,235,0.3)] flex items-center justify-center gap-3 group">
+              <a 
+                href="https://wa.me/5511993436066" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-12 py-6 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-black uppercase tracking-widest text-sm transition-all shadow-[0_0_40px_rgba(37,99,235,0.3)] flex items-center justify-center gap-3 group"
+              >
                 Agendar Aula Experimental <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -148,7 +153,14 @@ function JiuJitsu() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px] -z-10" />
         <div className="relative z-10">
           <h2 className="text-6xl md:text-9xl font-black mb-12 italic uppercase tracking-tighter leading-none">Entre para o <br />Time.</h2>
-          <button className="px-16 py-8 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-black uppercase tracking-widest text-lg transition-all shadow-[0_0_50px_rgba(37,99,235,0.4)]">Agendar Aula Agora</button>
+          <a 
+            href="https://wa.me/5511993436066" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-block px-16 py-8 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-black uppercase tracking-widest text-lg transition-all shadow-[0_0_50px_rgba(37,99,235,0.4)]"
+          >
+            Agendar Aula Agora
+          </a>
         </div>
       </section>
 

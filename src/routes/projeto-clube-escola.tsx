@@ -73,9 +73,14 @@ function ProjetoClubeEscola() {
               O caminho para o futebol profissional começa com base sólida, técnica refinada e mentalidade de campeão.
             </p>
             <div className="flex flex-wrap gap-6">
-              <button className="px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-black uppercase tracking-widest text-sm transition-all shadow-[0_20px_40px_rgba(37,99,235,0.25)] flex items-center gap-3 group">
+              <a 
+                href="https://wa.me/5511993436066" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-black uppercase tracking-widest text-sm transition-all shadow-[0_20px_40px_rgba(37,99,235,0.25)] flex items-center gap-3 group"
+              >
                 Quero Conhecer <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -211,7 +216,14 @@ function ProjetoClubeEscola() {
         </div>
         <div className="relative z-10">
           <h2 className="text-6xl md:text-9xl font-black mb-12 italic uppercase tracking-tighter leading-none">Faça parte <br />da história.</h2>
-          <button className="px-16 py-8 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-black uppercase tracking-widest text-lg transition-all shadow-[0_30px_60px_rgba(37,99,235,0.3)]">Quero me Inscrever</button>
+          <a 
+            href="https://wa.me/5511993436066" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-block px-16 py-8 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-black uppercase tracking-widest text-lg transition-all shadow-[0_30px_60px_rgba(37,99,235,0.3)]"
+          >
+            Quero me Inscrever
+          </a>
         </div>
       </section>
 
