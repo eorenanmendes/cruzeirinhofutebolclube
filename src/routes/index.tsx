@@ -607,7 +607,7 @@ function Index() {
                   className="text-lg font-black italic uppercase tracking-tighter text-amber-500"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  🥋 JIU-JITSU
+                  JIU-JITSU
                 </a>
                 <a 
                   href="/projeto-clube-escola" 
@@ -616,9 +616,10 @@ function Index() {
                   className="text-lg font-black italic uppercase tracking-tighter text-blue-500"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  ⚽ PROJETO CLUBE ESCOLA
+                  PROJETO CLUBE ESCOLA
                 </a>
               </div>
+
               <div className="flex justify-center gap-6 text-slate-500">
                 <a href="https://www.instagram.com/cruzeirinho.fc.1969/" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-6 h-6" />
