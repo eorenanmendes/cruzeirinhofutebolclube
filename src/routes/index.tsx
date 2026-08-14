@@ -14,6 +14,7 @@ import img5Asset from "@/assets/image-5.png.asset.json";
 import imgWebpAsset from "@/assets/image.webp.asset.json";
 import bookingBgAsset from "@/assets/team-group.png.asset.json";
 import ballAsset from "@/assets/soccer-ball.png.asset.json";
+import socialTeamGroup from "@/assets/social-team-group.png.asset.json";
 
 const schema = z.object({
   name: z.string().min(2),
