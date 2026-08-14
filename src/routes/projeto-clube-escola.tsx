@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Trophy, Users, Shield, ArrowRight, Mail, Phone, MapPin, ChevronLeft, MessageCircle, Star, Target } from "lucide-react";
 import logoAsset from "@/assets/logo.asset.json";
 import socialTeamGroup from "@/assets/social-team-group.png.asset.json";
+import clubeEscolaHero from "@/assets/clube-escola-hero.png.asset.json";
 
 export const Route = createFileRoute("/projeto-clube-escola")({
   component: ProjetoClubeEscola,
@@ -42,7 +43,7 @@ function ProjetoClubeEscola() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-blue-600/10 mix-blend-overlay z-10" />
           <img 
-            src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2093&auto=format&fit=crop" 
+            src={clubeEscolaHero.url} 
             className="w-full h-full object-cover opacity-30"
             alt="Futebol Profissional"
           />
