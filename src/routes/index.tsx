@@ -540,6 +540,7 @@ function Index() {
             <nav className="flex flex-col gap-8">
               {[
                 { label: "Início", href: "#" },
+                { label: "Projetos", href: "#projetos" },
                 { label: "Categorias", href: "#categorias" },
                 { label: "Sobre Nós", href: "#diferenciais" },
                 { label: "Localização", href: "#localizacao" }
