@@ -159,7 +159,7 @@ function ProjetoSocial() {
               </div>
               <div className="flex items-center gap-6 group">
                 <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-rose-500 transition-all group-hover:bg-rose-500 group-hover:text-white">
-                  <Instagram className="w-6 h-6" />
+                  <MessageCircle className="w-6 h-6" />
                 </div>
                 <div>
                   <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Instagram</p>
