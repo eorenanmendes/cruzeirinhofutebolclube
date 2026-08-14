@@ -5,6 +5,7 @@ import { Trophy, Users, Shield, ArrowRight, Mail, Phone, MapPin, ChevronLeft, Me
 import logoAsset from "@/assets/logo.asset.json";
 import jiuJitsuTraining1 from "@/assets/jiu-jitsu-training-1.png.asset.json";
 import jiuJitsuTraining2 from "@/assets/jiu-jitsu-training-2.png.asset.json";
+import socialTeamGroup from "@/assets/social-team-group.png.asset.json";
 
 export const Route = createFileRoute("/jiu-jitsu")({
   component: JiuJitsu,
