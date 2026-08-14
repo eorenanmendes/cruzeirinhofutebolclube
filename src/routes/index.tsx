@@ -16,6 +16,7 @@ import bookingBgAsset from "@/assets/team-group.png.asset.json";
 import ballAsset from "@/assets/soccer-ball.png.asset.json";
 import socialTeamGroup from "@/assets/social-team-group.png.asset.json";
 import jiuJitsuHero from "@/assets/jiu-jitsu-hero.png.asset.json";
+import ce1 from "@/assets/clube-escola-1.png.asset.json";
 
 
 const schema = z.object({
