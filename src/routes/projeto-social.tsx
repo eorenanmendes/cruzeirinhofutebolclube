@@ -56,9 +56,14 @@ function ProjetoSocial() {
               Nosso projeto social vai além das quatro linhas, focando na educação, cidadania e no futuro das nossas crianças na Zona Leste.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-rose-500 hover:bg-rose-600 text-white rounded-2xl font-bold transition-all shadow-xl shadow-rose-200 flex items-center gap-3 group">
+              <a 
+                href="https://wa.me/5511993436066" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-rose-500 hover:bg-rose-600 text-white rounded-2xl font-bold transition-all shadow-xl shadow-rose-200 flex items-center gap-3 group"
+              >
                 Conheça o Projeto <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </div>
           </motion.div>
           <motion.div
