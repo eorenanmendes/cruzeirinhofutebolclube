@@ -285,6 +285,7 @@ function Index() {
           {/* Container Mobile: Scroll Horizontal | Desktop: Grid */}
           <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-x-auto md:overflow-x-visible pb-12 md:pb-0 px-6 md:px-0 snap-x snap-mandatory scrollbar-hide perspective-1000">
             {[
+              { src: socialTeamGroup.url, title: "Nossa Família", desc: "União e raça dentro do nosso CT." },
               { src: img2Asset.url, title: "Grandes Conquistas", desc: "Campeões com dedicação e talento." },
               { src: img3Asset.url, title: "Formação de Elite", desc: "Preparação para o topo do futebol." },
               { src: img4Asset.url, title: "Ambiente Profissional", desc: "Vestiários e estrutura de primeira linha." },
