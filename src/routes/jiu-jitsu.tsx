@@ -129,6 +129,32 @@ function JiuJitsu() {
         </div>
       </section>
 
+      {/* Professores e Equipe */}
+      <section className="py-32 px-6 bg-neutral-900/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col items-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter text-center">Nossos Mestres</h2>
+            <p className="text-amber-500 mt-4 uppercase tracking-widest text-xs font-black">Liderança e Experiência no Tatame</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+             <div className="text-center group">
+                <div className="aspect-square rounded-[3rem] overflow-hidden border-2 border-amber-500/20 mb-8 relative">
+                   <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1974&auto=format&fit=crop" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Professor" />
+                </div>
+                <h3 className="text-2xl font-black italic uppercase tracking-tighter mb-2">Mestre Silva</h3>
+                <p className="text-amber-500 text-xs font-black uppercase tracking-widest">Faixa Preta 4º Grau</p>
+             </div>
+             <div className="text-center group">
+                <div className="aspect-square rounded-[3rem] overflow-hidden border-2 border-amber-500/20 mb-8 relative">
+                   <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=1974&auto=format&fit=crop" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Professor" />
+                </div>
+                <h3 className="text-2xl font-black italic uppercase tracking-tighter mb-2">Professor Santos</h3>
+                <p className="text-amber-500 text-xs font-black uppercase tracking-widest">Faixa Preta 1º Grau</p>
+             </div>
+          </div>
+        </div>
+      </section>
+
       {/* Galeria Premium 3D */}
       <section id="galeria" className="py-32 px-6 bg-neutral-900/30 overflow-hidden">
         <div className="max-w-7xl mx-auto">

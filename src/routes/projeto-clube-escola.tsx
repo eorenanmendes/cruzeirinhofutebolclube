@@ -174,6 +174,31 @@ function ProjetoClubeEscola() {
         </div>
       </section>
 
+      {/* Equipe Técnica */}
+      <section className="py-40 px-6 bg-slate-900/40">
+        <div className="max-w-7xl mx-auto">
+           <div className="text-center mb-24">
+             <h2 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter">Corpo Técnico</h2>
+             <p className="text-blue-500 mt-4 uppercase tracking-[0.3em] text-xs font-black">Profissionais Formados e Experientes</p>
+           </div>
+           <div className="grid md:grid-cols-3 gap-12">
+              {[
+                { name: "Coord. Técnico", role: "Licença A CBF", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop" },
+                { name: "Prep. Físico", role: "Espec. Fisiologia", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" },
+                { name: "Treinador Goleiros", role: "Ex-Atleta Profissional", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" }
+              ].map((member, i) => (
+                <div key={i} className="text-center group">
+                   <div className="aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/5 mb-8">
+                      <img src={member.img} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt={member.name} />
+                   </div>
+                   <h3 className="text-xl font-black italic uppercase tracking-tighter mb-2">{member.name}</h3>
+                   <p className="text-blue-500 text-[10px] font-black uppercase tracking-widest">{member.role}</p>
+                </div>
+              ))}
+           </div>
+        </div>
+      </section>
+
       {/* Galeria Premium Grid Assimétrica */}
       <section id="galeria" className="py-40 px-6 bg-slate-900/20">
         <div className="max-w-7xl mx-auto">

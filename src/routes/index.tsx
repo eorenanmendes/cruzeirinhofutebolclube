@@ -574,7 +574,7 @@ function Index() {
                   className="text-lg font-black italic uppercase tracking-tighter text-rose-500"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Projeto Social
+                  PROJETO SOCIAL
                 </a>
                 <a 
                   href="/jiu-jitsu" 
@@ -583,7 +583,7 @@ function Index() {
                   className="text-lg font-black italic uppercase tracking-tighter text-amber-500"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  🥋 Jiu-Jitsu
+                  🥋 JIU-JITSU
                 </a>
                 <a 
                   href="/projeto-clube-escola" 
@@ -592,7 +592,7 @@ function Index() {
                   className="text-lg font-black italic uppercase tracking-tighter text-blue-500"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  ⚽ Clube Escola
+                  ⚽ PROJETO CLUBE ESCOLA
                 </a>
               </div>
               <div className="flex justify-center gap-6 text-slate-500">
