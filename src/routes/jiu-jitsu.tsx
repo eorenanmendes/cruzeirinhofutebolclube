@@ -6,6 +6,8 @@ import logoAsset from "@/assets/logo.asset.json";
 import jiuJitsuTraining1 from "@/assets/jiu-jitsu-training-1.png.asset.json";
 import jiuJitsuTraining2 from "@/assets/jiu-jitsu-training-2.png.asset.json";
 import socialTeamGroup from "@/assets/social-team-group.png.asset.json";
+import jiuJitsuHero from "@/assets/jiu-jitsu-hero.png.asset.json";
+
 
 export const Route = createFileRoute("/jiu-jitsu")({
   component: JiuJitsu,
@@ -43,7 +45,7 @@ function JiuJitsu() {
       <section className="relative min-h-screen flex items-center pt-20 px-6 overflow-hidden">
          <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?q=80&w=2070&auto=format&fit=crop" 
+            src={jiuJitsuHero.url} 
             className="w-full h-full object-cover opacity-40 grayscale"
             alt="Jiu Jitsu Training"
           />
