@@ -23,7 +23,7 @@ function JiuJitsu() {
           <div className="flex items-center gap-3">
             <img src={logoAsset.url} alt="Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain" />
             <div className="flex flex-col">
-              <span className="text-xl font-black italic uppercase tracking-tighter leading-none">Cruzeirinho</span>
+              <span className="text-lg font-black italic uppercase tracking-tighter leading-none">Cruzeirinho</span>
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-500">Jiu-Jitsu</span>
             </div>
           </div>
