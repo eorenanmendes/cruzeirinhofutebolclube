@@ -87,7 +87,7 @@ function ProjetoClubeEscola() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
           <div className="relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden border border-white/5 relative z-10">
-               <img src="https://images.unsplash.com/photo-1510566337590-2fc1f21d0faa?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Treinamento" />
+               <img src={socialTeamGroup.url} className="w-full h-full object-cover transition-all duration-700" alt="Treinamento" />
             </div>
             <div className="absolute -top-10 -right-10 w-full h-full border-2 border-blue-600/20 rounded-[3rem] -z-10" />
           </div>
