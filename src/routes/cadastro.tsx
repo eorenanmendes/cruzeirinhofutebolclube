@@ -41,15 +41,56 @@ function Cadastro() {
       toast.error("Por favor, realize a assinatura digital.");
       return;
     }
+    if (!photo) {
+      toast.error("Por favor, envie a foto 3x4 do aluno.");
+      return;
+    }
     setLoading(true);
 
     try {
-      // Logic for upload and DB insert will be here
-      await new Promise(r => setTimeout(r, 2000));
-      toast.success("Cadastro realizado com sucesso!");
+      // 1. Upload Photo
+      const photoExt = photo.name.split('.').pop();
+      const photoName = `${Math.random().toString(36).substring(2)}-${Date.now()}.${photoExt}`;
+      const { data: photoData, error: photoError } = await supabase.storage
+        .from('student-photos')
+        .upload(photoName, photo);
+      
+      if (photoError) throw photoError;
+
+      // 2. Upload Signature (base64 to Blob)
+      const sigBlob = await (await fetch(signature)).blob();
+      const sigName = `${Math.random().toString(36).substring(2)}-${Date.now()}.png`;
+      const { data: sigData, error: sigError } = await supabase.storage
+        .from('signatures')
+        .upload(sigName, sigBlob);
+
+      if (sigError) throw sigError;
+
+      // 3. Create Student record
+      const protocol = `CRZ-${Math.floor(100000 + Math.random() * 900000)}`;
+      const { error: dbError } = await supabase
+        .from('students')
+        .insert({
+          ...data,
+          photo_url: photoName,
+          signature_url: sigName,
+          protocol,
+          status: 'pending'
+        });
+
+      if (dbError) throw dbError;
+
+      // 4. WhatsApp Message Logic (Mock for now, implementation details in instructions)
+      const waMsg = `NOVO CADASTRO DE ALUNO\nProtocolo: ${protocol}\nNome: ${data.name}\nResponsável: ${data.parent_name}`;
+      window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(waMsg)}`, '_blank');
+
+      toast.success(`Cadastro realizado com sucesso! Protocolo: ${protocol}`);
       reset();
-    } catch (err) {
-      toast.error("Erro ao cadastrar.");
+      setPhoto(null);
+      setSignature(null);
+    } catch (err: any) {
+      console.error(err);
+      toast.error(`Erro ao cadastrar: ${err.message || 'Verifique sua conexão'}`);
     } finally {
       setLoading(false);
     }
