@@ -1,47 +1,52 @@
-# Plan: New Independent Project Mini-sites
+# Implementation Plan - Student Registration and Admin System
 
-Create three professional independent mini-sites for Cruzeirinho's core projects: Social, Jiu-Jitsu, and Clube Escola.
+Add a student registration system and an administrative dashboard to the Cruzeirinho Futebol Clube website while preserving existing public pages and branding.
 
-## User Interface & Design
+## User Review Required
 
-### Main Page Update (`src/routes/index.tsx`)
-- Replace or transform "Nossos Projetos" section.
-- Add three distinct cards for:
-  - PROJETO SOCIAL
-  - 🥋 JIU-JITSU
-  - ⚽ PROJETO CLUBE ESCOLA
-- Configure each card to open its respective route in a new tab (`target="_blank"`).
+> [!IMPORTANT]
+> The admin area will require authentication. I will use Lovable Cloud (Supabase) for authentication and data storage.
 
-### New Routes
-Create three new independent route files:
-1. `src/routes/projeto-social.tsx`
-2. `src/routes/jiu-jitsu.tsx`
-3. `src/routes/projeto-clube-escola.tsx`
+- **WhatsApp Integration**: Should the "Send to WhatsApp" button open a pre-filled message in the user's WhatsApp client, or do you require a background server-side API integration? (Initial implementation will be the client-side link for safety).
+- **Admin Access**: Which email should be granted initial admin access?
 
-### Mini-site structure (for each route)
-Each page will have a unique identity but share a common high-quality structure:
-- **Unique Header**: Specific logo/name, internal navigation (Sobre, Projeto, Galeria, Contato), and a "Voltar ao Cruzeirinho" button.
-- **Hero Section**: High-impact large image, strong title, subtitle, and CTA.
-- **Narrative Flow**: About -> Purpose/Methodology -> Objectives -> Activities -> Team -> Premium Gallery -> Info/Contact.
-- **Premium Gallery**: Unique asymmetric grid with hover effects and smooth transitions.
-- **Animations**: Subtle Framer Motion entries (fade, slide, scale) and discrete parallax.
-- **Responsiveness**: Tailored layouts for Mobile, Tablet, and Desktop.
+## Proposed Changes
+
+### 1. Database & Backend (Lovable Cloud)
+- Create `students` table:
+  - Fields: name, birth_date, student_cpf, student_rg, photo_url, parent_name, parent_cpf, parent_rg, phone, email, address, modality, category, notes, signature_url, protocol_number, status (pending, analysis, approved, active, inactive).
+- Create `user_roles` table for admin access control.
+- Enable RLS policies:
+  - `authenticated` admins can manage all data.
+  - Public can insert (for registration).
+
+### 2. Public Frontend Additions
+- **Header**: Add "Cadastro de Aluno" link.
+- **New Route**: `src/routes/cadastro.tsx`
+  - Responsive multi-step form using `react-hook-form` and `zod`.
+  - Photo upload with preview.
+  - Digital signature canvas component.
+  - Protocol generation and success message.
+  - WhatsApp redirect with formatted student data.
+
+### 3. Administrative Area
+- **New Route**: `src/routes/admin/index.tsx` (Protected)
+  - Dashboard stats (total students, by modality, etc.).
+  - Searchable/filterable student table.
+- **New Route**: `src/routes/admin/student/$id.tsx`
+  - Detailed view with profile photo and digital signature.
+  - Status management (Pendente -> Ativo).
+  - Edit/Delete functionality.
+- **New Route**: `src/routes/admin/settings.tsx`
+  - Configure WhatsApp number and institution name.
+
+### 4. Security & Navigation
+- Implement `_authenticated` layout gate for admin routes.
+- Secure storage buckets for photos and signatures.
 
 ## Technical Details
 
-### Identities
-- **Projeto Social**: Human, Inspiring, Community-focused. Warm colors, educational imagery.
-- **Jiu-Jitsu**: Strong, Intense, Premium, Disciplined. High-contrast sports aesthetic.
-- **Projeto Clube Escola**: Dynamic, Professional, Young. Soccer-centric, high-performance vibe.
-
-### Implementation steps
-1.  **Shared Components**: Create generic but highly customizable components for the common sections (Hero, Gallery, CTA) to maintain code quality while allowing visual divergence.
-2.  **Asset Management**: Set up placeholder image constants for easy replacement later.
-3.  **Layout Implementation**: Build each route with its specific identity (colors, fonts, layout patterns).
-4.  **Integration**: Update the landing page to link to these new routes.
-
-## Verification Plan
-- Check mobile responsiveness for each new mini-site.
-- Verify "target=_blank" behavior on main page links.
-- Ensure "Voltar ao Cruzeirinho" links work correctly.
-- Test scroll animations and gallery transitions.
+- **Components**: `SignatureCanvas` for digital signing, `ImageUpload` for 3x4 photos.
+- **Routing**: TanStack Router path-based routes.
+- **State Management**: TanStack Query for admin data fetching.
+- **Styling**: Tailwind CSS v4, matching the existing "Blue/Black" sporty aesthetic.
