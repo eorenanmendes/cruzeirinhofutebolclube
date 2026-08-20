@@ -109,7 +109,36 @@ function Cadastro() {
             <div className="grid md:grid-cols-2 gap-6">
               <input {...register("name")} placeholder="Nome completo do aluno" className="w-full p-4 rounded-xl border border-white/10 bg-white/5 focus:border-blue-600 outline-none transition-all" />
               <input type="date" {...register("birth_date")} className="w-full p-4 rounded-xl border border-white/10 bg-white/5 focus:border-blue-600 outline-none transition-all" />
+            <input {...register("address")} placeholder="Endereço completo" className="w-full p-4 rounded-xl border border-white/10 bg-white/5 focus:border-blue-600 outline-none transition-all" />
+            <div className="grid md:grid-cols-2 gap-6">
+              <select {...register("modality")} className="w-full p-4 rounded-xl border border-white/10 bg-white/5 focus:border-blue-600 outline-none transition-all appearance-none text-slate-400">
+                <option value="">Selecione a Modalidade</option>
+                <option value="futebol">Futebol</option>
+                <option value="jiu-jitsu">Jiu-Jitsu</option>
+                <option value="capoeira">Capoeira</option>
+              </select>
+              <select {...register("category")} className="w-full p-4 rounded-xl border border-white/10 bg-white/5 focus:border-blue-600 outline-none transition-all appearance-none text-slate-400">
+                <option value="">Selecione a Turma/Categoria</option>
+                <option value="sub-7">Sub-7</option>
+                <option value="sub-9">Sub-9</option>
+                <option value="sub-11">Sub-11</option>
+                <option value="sub-13">Sub-13</option>
+                <option value="sub-15">Sub-15</option>
+                <option value="sub-17">Sub-17</option>
+              </select>
             </div>
+            <textarea {...register("notes")} placeholder="Observações adicionais (opcional)" className="w-full p-4 rounded-xl border border-white/10 bg-white/5 focus:border-blue-600 outline-none transition-all min-h-[100px]" />
+          </div>
+
+          <div className="bg-blue-600/10 border border-blue-600/20 p-6 rounded-2xl space-y-4">
+            <label className="flex items-start gap-3 cursor-pointer group">
+              <input type="checkbox" required className="mt-1.5 w-4 h-4 rounded border-white/10 bg-white/5 text-blue-600 focus:ring-blue-600 focus:ring-offset-slate-900" />
+              <span className="text-sm text-slate-300 group-hover:text-white transition-colors leading-relaxed">
+                Declaro que as informações fornecidas neste formulário são verdadeiras e autorizo o cadastro do aluno no Cruzeirinho Jd. Maringá.
+              </span>
+            </label>
+          </div>
+
             <ImageUpload label="Foto 3x4 do aluno" onUpload={setPhoto} />
           </div>
 
