@@ -85,6 +85,7 @@ function Index() {
           <div className="hidden md:flex items-center gap-8">
             <a href="#projetos" className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Projetos</a>
             <a href="#categorias" className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Categorias</a>
+            <a href="/cadastro" className="text-sm font-black uppercase tracking-widest text-blue-500 hover:text-blue-400 transition-colors border-b border-blue-500/30">Cadastro de Aluno</a>
             
             <button onClick={() => setIsBookingOpen(true)} className="text-sm font-black uppercase tracking-widest hover:text-blue-500 transition-colors">Agendar Aula</button>
             <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-black uppercase tracking-widest text-xs transition shadow-lg shadow-blue-600/20">
@@ -525,8 +526,13 @@ function Index() {
           </div>
 
           <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-slate-600 text-[10px] font-black uppercase tracking-widest">
-              © 2026 Cruzeirinho Futebol Clube. Todos os direitos reservados.
+            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+              <div className="text-slate-600 text-[10px] font-black uppercase tracking-widest">
+                © 2026 Cruzeirinho Futebol Clube. Todos os direitos reservados.
+              </div>
+              <a href="/admin" className="text-slate-700 text-[10px] font-black uppercase tracking-widest hover:text-blue-500 transition-colors">
+                Área Administrativa
+              </a>
             </div>
             <div className="flex gap-6">
               <Mail className="w-5 h-5 text-slate-500 hover:text-blue-500 cursor-pointer transition-colors" />
@@ -565,6 +571,7 @@ function Index() {
                 { label: "Início", href: "#" },
                 { label: "Projetos", href: "#projetos" },
                 { label: "Categorias", href: "#categorias" },
+                { label: "Cadastro de Aluno", href: "/cadastro", special: true },
                 { label: "Sobre Nós", href: "#diferenciais" },
                 { label: "Localização", href: "#localizacao" }
               ].map((link, i) => (
@@ -572,7 +579,7 @@ function Index() {
                   key={i}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-2xl font-black italic uppercase tracking-tighter hover:text-blue-500 transition-colors"
+                  className={`text-2xl font-black italic uppercase tracking-tighter transition-colors ${link.special ? 'text-blue-500' : 'hover:text-blue-500'}`}
 
                 >
                   {link.label}
