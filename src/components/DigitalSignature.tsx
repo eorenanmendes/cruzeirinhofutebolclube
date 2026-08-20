@@ -35,6 +35,7 @@ export const DigitalSignature: React.FC<DigitalSignatureProps> = ({
         {label}
       </label>
       <div className="relative w-full aspect-[3/1] bg-white rounded-xl overflow-hidden border-2 border-slate-800 focus-within:border-blue-600 transition-colors">
+        {/* @ts-ignore */}
         <SignatureCanvas
           ref={sigCanvas}
           onEnd={handleEnd}
