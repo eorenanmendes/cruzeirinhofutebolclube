@@ -15,6 +15,7 @@ import { Route as CapoeiraRouteImport } from './routes/capoeira'
 import { Route as JiuJitsuRouteImport } from './routes/jiu-jitsu'
 import { Route as ProjetoClubeEscolaRouteImport } from './routes/projeto-clube-escola'
 import { Route as ProjetoSocialRouteImport } from './routes/projeto-social'
+import { Route as AdminIndexRouteImport } from './routes/admin/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +47,11 @@ const ProjetoSocialRoute = ProjetoSocialRouteImport.update({
   path: '/projeto-social',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/jiu-jitsu': typeof JiuJitsuRoute
   '/projeto-clube-escola': typeof ProjetoClubeEscolaRoute
   '/projeto-social': typeof ProjetoSocialRoute
+  '/admin/': typeof AdminIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/jiu-jitsu': typeof JiuJitsuRoute
   '/projeto-clube-escola': typeof ProjetoClubeEscolaRoute
   '/projeto-social': typeof ProjetoSocialRoute
+  '/admin': typeof AdminIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +79,7 @@ export interface FileRoutesById {
   '/jiu-jitsu': typeof JiuJitsuRoute
   '/projeto-clube-escola': typeof ProjetoClubeEscolaRoute
   '/projeto-social': typeof ProjetoSocialRoute
+  '/admin/': typeof AdminIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +90,7 @@ export interface FileRouteTypes {
     | '/jiu-jitsu'
     | '/projeto-clube-escola'
     | '/projeto-social'
+    | '/admin/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +99,7 @@ export interface FileRouteTypes {
     | '/jiu-jitsu'
     | '/projeto-clube-escola'
     | '/projeto-social'
+    | '/admin'
   id:
     | '__root__'
     | '/'
@@ -97,6 +108,7 @@ export interface FileRouteTypes {
     | '/jiu-jitsu'
     | '/projeto-clube-escola'
     | '/projeto-social'
+    | '/admin/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,6 +118,7 @@ export interface RootRouteChildren {
   JiuJitsuRoute: typeof JiuJitsuRoute
   ProjetoClubeEscolaRoute: typeof ProjetoClubeEscolaRoute
   ProjetoSocialRoute: typeof ProjetoSocialRoute
+  AdminIndexRoute: typeof AdminIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -152,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjetoSocialRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/': {
+      id: '/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -162,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   JiuJitsuRoute: JiuJitsuRoute,
   ProjetoClubeEscolaRoute: ProjetoClubeEscolaRoute,
   ProjetoSocialRoute: ProjetoSocialRoute,
+  AdminIndexRoute: AdminIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
