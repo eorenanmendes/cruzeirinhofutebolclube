@@ -125,9 +125,17 @@ function AdminDashboard() {
       {/* Main Content */}
       <main className="flex-1 p-6 md:p-12 overflow-y-auto">
         <header className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
-          <div>
-            <h1 className="text-4xl font-black italic uppercase tracking-tighter">Secretaria Cruzeirinho</h1>
-            <p className="text-slate-500 text-sm mt-1">Gestão de alunos e cadastros.</p>
+          <div className="flex flex-col md:flex-row md:items-center gap-6">
+            <div>
+              <h1 className="text-4xl font-black italic uppercase tracking-tighter">Secretaria Cruzeirinho</h1>
+              <p className="text-slate-500 text-sm mt-1">Gestão de alunos e cadastros.</p>
+            </div>
+            <a 
+              href="/cadastro" 
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-black uppercase tracking-widest text-[10px] transition-all flex items-center gap-2"
+            >
+              <Users className="w-4 h-4" /> Novo Cadastro
+            </a>
           </div>
           
           <div className="grid grid-cols-3 gap-4">
@@ -317,10 +325,34 @@ function AdminDashboard() {
                     >
                       <CheckCircle2 className="w-4 h-4" /> Aprovar
                     </button>
-                    <button className="flex-1 bg-slate-800 hover:bg-slate-700 text-white p-4 rounded-xl font-black uppercase tracking-widest text-[10px] transition-all flex items-center justify-center gap-2">
+                    <button 
+                      onClick={() => window.print()}
+                      className="flex-1 bg-slate-800 hover:bg-slate-700 text-white p-4 rounded-xl font-black uppercase tracking-widest text-[10px] transition-all flex items-center justify-center gap-2"
+                    >
                       <Printer className="w-4 h-4" /> Imprimir
                     </button>
-                    <button className="flex-1 bg-rose-600/20 hover:bg-rose-600 text-rose-500 hover:text-white p-4 rounded-xl font-black uppercase tracking-widest text-[10px] transition-all flex items-center justify-center gap-2">
+                    <a 
+                      href={selectedStudent.photo_url ? supabase.storage.from('student-photos').getPublicUrl(selectedStudent.photo_url).data.publicUrl : '#'}
+                      download={`foto-${selectedStudent.name}.jpg`}
+                      target="_blank"
+                      className="flex-1 bg-blue-600/20 hover:bg-blue-600 text-blue-500 hover:text-white p-4 rounded-xl font-black uppercase tracking-widest text-[10px] transition-all flex items-center justify-center gap-2"
+                    >
+                      <Download className="w-4 h-4" /> Baixar Foto
+                    </a>
+                    <button 
+                      onClick={async () => {
+                        if (confirm('Deseja realmente excluir este aluno?')) {
+                          const { error } = await supabase.from('students').delete().eq('id', selectedStudent.id);
+                          if (error) toast.error('Erro ao excluir');
+                          else {
+                            toast.success('Aluno removido');
+                            setSelectedStudent(null);
+                            fetchData();
+                          }
+                        }
+                      }}
+                      className="flex-1 bg-rose-600/20 hover:bg-rose-600 text-rose-500 hover:text-white p-4 rounded-xl font-black uppercase tracking-widest text-[10px] transition-all flex items-center justify-center gap-2"
+                    >
                       <Trash2 className="w-4 h-4" /> Excluir
                     </button>
                   </div>
