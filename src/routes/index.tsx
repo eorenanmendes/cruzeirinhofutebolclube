@@ -1,7 +1,7 @@
 import * as React from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, MapPin, Trophy, Users, Calendar, MessageCircle, Mail, Menu, X, ChevronRight, Star, Heart, Shield } from "lucide-react";
+import { ArrowRight, MapPin, Trophy, Users, Calendar, MessageCircle, Mail, Menu, X, ChevronRight, Star, Heart, Shield, Lock } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -93,9 +93,14 @@ function Index() {
             </button>
           </div>
           
-          <button className="md:hidden text-white" onClick={() => setIsMenuOpen(true)}>
-            <Menu className="w-6 h-6" />
-          </button>
+          <div className="flex items-center gap-4">
+            <a href="/auth" className="text-white hover:text-blue-500 transition-colors p-2 bg-white/5 rounded-lg border border-white/10 group">
+              <Lock className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </a>
+            <button className="md:hidden text-white" onClick={() => setIsMenuOpen(true)}>
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
         </div>
       </nav>
       
@@ -530,8 +535,8 @@ function Index() {
               <div className="text-slate-600 text-[10px] font-black uppercase tracking-widest">
                 © 2026 Cruzeirinho Futebol Clube. Todos os direitos reservados.
               </div>
-              <a href="/admin" className="text-slate-700 text-[10px] font-black uppercase tracking-widest hover:text-blue-500 transition-colors">
-                Área Administrativa
+              <a href="/auth" className="text-slate-700 text-[10px] font-black uppercase tracking-widest hover:text-blue-500 transition-colors flex items-center gap-2">
+                <Lock className="w-3 h-3" /> Área Administrativa
               </a>
             </div>
             <div className="flex gap-6">
