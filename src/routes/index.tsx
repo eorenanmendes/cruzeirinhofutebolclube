@@ -526,8 +526,13 @@ function Index() {
           </div>
 
           <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-slate-600 text-[10px] font-black uppercase tracking-widest">
-              © 2026 Cruzeirinho Futebol Clube. Todos os direitos reservados.
+            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+              <div className="text-slate-600 text-[10px] font-black uppercase tracking-widest">
+                © 2026 Cruzeirinho Futebol Clube. Todos os direitos reservados.
+              </div>
+              <a href="/admin" className="text-slate-700 text-[10px] font-black uppercase tracking-widest hover:text-blue-500 transition-colors">
+                Área Administrativa
+              </a>
             </div>
             <div className="flex gap-6">
               <Mail className="w-5 h-5 text-slate-500 hover:text-blue-500 cursor-pointer transition-colors" />
