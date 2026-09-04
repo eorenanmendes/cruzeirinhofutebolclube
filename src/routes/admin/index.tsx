@@ -18,11 +18,18 @@ import {
   Camera
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { useSignedUrl } from "@/lib/signed-url";
 import { toast, Toaster } from "sonner";
 
 export const Route = createFileRoute("/admin/")({
   component: AdminDashboard,
 });
+
+function StudentAvatar({ path, name }: { path?: string | null; name: string }) {
+  const url = useSignedUrl("student-photos", path);
+  if (!url) return <Users className="w-5 h-5 text-slate-600" />;
+  return <img src={url} alt={name} className="w-full h-full object-cover" />;
+}
 
 function AdminDashboard() {
   const navigate = useNavigate();
