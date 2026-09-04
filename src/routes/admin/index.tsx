@@ -39,6 +39,8 @@ function AdminDashboard() {
   const [stats, setStats] = useState({ total: 0, pending: 0, active: 0 });
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedStudent, setSelectedStudent] = useState<any>(null);
+  const selectedPhotoUrl = useSignedUrl("student-photos", selectedStudent?.photo_url);
+  const selectedSignatureUrl = useSignedUrl("signatures", selectedStudent?.signature_url);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
