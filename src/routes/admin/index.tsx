@@ -249,7 +249,7 @@ function AdminDashboard() {
                 <div className="w-48 h-64 bg-slate-800 rounded-[2rem] overflow-hidden border border-white/10 shrink-0">
                   {selectedStudent.photo_url ? (
                     <img 
-                      src={supabase.storage.from('student-photos').getPublicUrl(selectedStudent.photo_url).data.publicUrl} 
+                      src={selectedPhotoUrl ?? undefined} 
                       alt="Student" 
                       className="w-full h-full object-cover"
                     />
@@ -313,7 +313,7 @@ function AdminDashboard() {
                     <div className="bg-white rounded-2xl p-6 h-40 flex items-center justify-center overflow-hidden border-4 border-slate-800">
                       {selectedStudent.signature_url ? (
                         <img 
-                          src={supabase.storage.from('signatures').getPublicUrl(selectedStudent.signature_url).data.publicUrl} 
+                          src={selectedSignatureUrl ?? undefined} 
                           className="max-h-full"
                           alt="Signature"
                         />
@@ -335,7 +335,7 @@ function AdminDashboard() {
                       <Printer className="w-4 h-4" /> Imprimir
                     </button>
                     <a 
-                      href={selectedStudent.photo_url ? supabase.storage.from('student-photos').getPublicUrl(selectedStudent.photo_url).data.publicUrl : '#'}
+                      href={selectedPhotoUrl ?? '#'}
                       download={`foto-${selectedStudent.name}.jpg`}
                       target="_blank"
                       className="flex-1 bg-blue-600/20 hover:bg-blue-600 text-blue-500 hover:text-white p-4 rounded-xl font-black uppercase tracking-widest text-[10px] transition-all flex items-center justify-center gap-2"
