@@ -18,11 +18,18 @@ import {
   Camera
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { useSignedUrl } from "@/lib/signed-url";
 import { toast, Toaster } from "sonner";
 
 export const Route = createFileRoute("/admin/")({
   component: AdminDashboard,
 });
+
+function StudentAvatar({ path, name }: { path?: string | null; name: string }) {
+  const url = useSignedUrl("student-photos", path);
+  if (!url) return <Users className="w-5 h-5 text-slate-600" />;
+  return <img src={url} alt={name} className="w-full h-full object-cover" />;
+}
 
 function AdminDashboard() {
   const navigate = useNavigate();
@@ -32,6 +39,8 @@ function AdminDashboard() {
   const [stats, setStats] = useState({ total: 0, pending: 0, active: 0 });
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedStudent, setSelectedStudent] = useState<any>(null);
+  const selectedPhotoUrl = useSignedUrl("student-photos", selectedStudent?.photo_url);
+  const selectedSignatureUrl = useSignedUrl("signatures", selectedStudent?.signature_url);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -187,13 +196,7 @@ function AdminDashboard() {
                   <td className="p-6">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center overflow-hidden border border-white/10">
-                        {s.photo_url ? (
-                          <img 
-                            src={supabase.storage.from('student-photos').getPublicUrl(s.photo_url).data.publicUrl} 
-                            alt={s.name} 
-                            className="w-full h-full object-cover"
-                          />
-                        ) : <Users className="w-5 h-5 text-slate-600" />}
+                        <StudentAvatar path={s.photo_url} name={s.name} />
                       </div>
                       <div>
                         <p className="text-sm font-black uppercase tracking-tighter">{s.name}</p>
@@ -246,7 +249,7 @@ function AdminDashboard() {
                 <div className="w-48 h-64 bg-slate-800 rounded-[2rem] overflow-hidden border border-white/10 shrink-0">
                   {selectedStudent.photo_url ? (
                     <img 
-                      src={supabase.storage.from('student-photos').getPublicUrl(selectedStudent.photo_url).data.publicUrl} 
+                      src={selectedPhotoUrl ?? undefined} 
                       alt="Student" 
                       className="w-full h-full object-cover"
                     />
@@ -310,7 +313,7 @@ function AdminDashboard() {
                     <div className="bg-white rounded-2xl p-6 h-40 flex items-center justify-center overflow-hidden border-4 border-slate-800">
                       {selectedStudent.signature_url ? (
                         <img 
-                          src={supabase.storage.from('signatures').getPublicUrl(selectedStudent.signature_url).data.publicUrl} 
+                          src={selectedSignatureUrl ?? undefined} 
                           className="max-h-full"
                           alt="Signature"
                         />
@@ -332,7 +335,7 @@ function AdminDashboard() {
                       <Printer className="w-4 h-4" /> Imprimir
                     </button>
                     <a 
-                      href={selectedStudent.photo_url ? supabase.storage.from('student-photos').getPublicUrl(selectedStudent.photo_url).data.publicUrl : '#'}
+                      href={selectedPhotoUrl ?? '#'}
                       download={`foto-${selectedStudent.name}.jpg`}
                       target="_blank"
                       className="flex-1 bg-blue-600/20 hover:bg-blue-600 text-blue-500 hover:text-white p-4 rounded-xl font-black uppercase tracking-widest text-[10px] transition-all flex items-center justify-center gap-2"
