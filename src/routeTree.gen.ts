@@ -14,6 +14,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as CadastroRouteImport } from './routes/cadastro'
 import { Route as CapoeiraRouteImport } from './routes/capoeira'
 import { Route as JiuJitsuRouteImport } from './routes/jiu-jitsu'
+import { Route as MuayThaiRouteImport } from './routes/muay-thai'
 import { Route as ProjetoClubeEscolaRouteImport } from './routes/projeto-clube-escola'
 import { Route as ProjetoSocialRouteImport } from './routes/projeto-social'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
@@ -43,6 +44,11 @@ const JiuJitsuRoute = JiuJitsuRouteImport.update({
   path: '/jiu-jitsu',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MuayThaiRoute = MuayThaiRouteImport.update({
+  id: '/muay-thai',
+  path: '/muay-thai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjetoClubeEscolaRoute = ProjetoClubeEscolaRouteImport.update({
   id: '/projeto-clube-escola',
   path: '/projeto-clube-escola',
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/cadastro': typeof CadastroRoute
   '/capoeira': typeof CapoeiraRoute
   '/jiu-jitsu': typeof JiuJitsuRoute
+  '/muay-thai': typeof MuayThaiRoute
   '/projeto-clube-escola': typeof ProjetoClubeEscolaRoute
   '/projeto-social': typeof ProjetoSocialRoute
   '/admin/': typeof AdminIndexRoute
@@ -75,6 +82,7 @@ export interface FileRoutesByTo {
   '/cadastro': typeof CadastroRoute
   '/capoeira': typeof CapoeiraRoute
   '/jiu-jitsu': typeof JiuJitsuRoute
+  '/muay-thai': typeof MuayThaiRoute
   '/projeto-clube-escola': typeof ProjetoClubeEscolaRoute
   '/projeto-social': typeof ProjetoSocialRoute
   '/admin': typeof AdminIndexRoute
@@ -86,6 +94,7 @@ export interface FileRoutesById {
   '/cadastro': typeof CadastroRoute
   '/capoeira': typeof CapoeiraRoute
   '/jiu-jitsu': typeof JiuJitsuRoute
+  '/muay-thai': typeof MuayThaiRoute
   '/projeto-clube-escola': typeof ProjetoClubeEscolaRoute
   '/projeto-social': typeof ProjetoSocialRoute
   '/admin/': typeof AdminIndexRoute
@@ -98,6 +107,7 @@ export interface FileRouteTypes {
     | '/cadastro'
     | '/capoeira'
     | '/jiu-jitsu'
+    | '/muay-thai'
     | '/projeto-clube-escola'
     | '/projeto-social'
     | '/admin/'
@@ -108,6 +118,7 @@ export interface FileRouteTypes {
     | '/cadastro'
     | '/capoeira'
     | '/jiu-jitsu'
+    | '/muay-thai'
     | '/projeto-clube-escola'
     | '/projeto-social'
     | '/admin'
@@ -118,6 +129,7 @@ export interface FileRouteTypes {
     | '/cadastro'
     | '/capoeira'
     | '/jiu-jitsu'
+    | '/muay-thai'
     | '/projeto-clube-escola'
     | '/projeto-social'
     | '/admin/'
@@ -129,6 +141,7 @@ export interface RootRouteChildren {
   CadastroRoute: typeof CadastroRoute
   CapoeiraRoute: typeof CapoeiraRoute
   JiuJitsuRoute: typeof JiuJitsuRoute
+  MuayThaiRoute: typeof MuayThaiRoute
   ProjetoClubeEscolaRoute: typeof ProjetoClubeEscolaRoute
   ProjetoSocialRoute: typeof ProjetoSocialRoute
   AdminIndexRoute: typeof AdminIndexRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JiuJitsuRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/muay-thai': {
+      id: '/muay-thai'
+      path: '/muay-thai'
+      fullPath: '/muay-thai'
+      preLoaderRoute: typeof MuayThaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projeto-clube-escola': {
       id: '/projeto-clube-escola'
       path: '/projeto-clube-escola'
@@ -201,6 +221,7 @@ const rootRouteChildren: RootRouteChildren = {
   CadastroRoute: CadastroRoute,
   CapoeiraRoute: CapoeiraRoute,
   JiuJitsuRoute: JiuJitsuRoute,
+  MuayThaiRoute: MuayThaiRoute,
   ProjetoClubeEscolaRoute: ProjetoClubeEscolaRoute,
   ProjetoSocialRoute: ProjetoSocialRoute,
   AdminIndexRoute: AdminIndexRoute,

@@ -33,6 +33,16 @@ const schema = z.object({
 });
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Cruzeirinho Futebol Clube — Esporte e Formação" },
+      { name: "description", content: "Conheça os projetos esportivos, categorias e modalidades do Cruzeirinho Futebol Clube." },
+      { property: "og:title", content: "Cruzeirinho Futebol Clube — Esporte e Formação" },
+      { property: "og:description", content: "Conheça os projetos esportivos, categorias e modalidades do Cruzeirinho Futebol Clube." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
@@ -172,7 +182,7 @@ function Index() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {[
               { 
                 title: "PROJETO SOCIAL", 
@@ -198,6 +208,14 @@ function Index() {
                 href: "/capoeira",
                 img: capoeiraCard.url
               },
+              {
+                title: "MUAY THAI",
+                desc: "Técnica, força e disciplina na tradicional arte das oito armas.",
+                icon: Shield,
+                color: "blue",
+                href: "/muay-thai",
+                img: null,
+              },
               { 
                 title: "PROJETO CLUBE ESCOLA", 
                 desc: "Formação de elite e alto rendimento para o futebol profissional.", 
@@ -215,11 +233,21 @@ function Index() {
                 whileHover={{ y: -15 }}
                 className="group relative block aspect-[3/4] rounded-[3rem] overflow-hidden border border-white/10"
               >
-                <img 
-                  src={proj.img} 
-                  alt={proj.title} 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" 
-                />
+                {proj.img ? (
+                  <img
+                    src={proj.img}
+                    alt={proj.title}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center bg-neutral-900">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.22),transparent_60%)]" />
+                    <div className="relative flex flex-col items-center gap-4 text-center">
+                      <Shield className="h-16 w-16 text-blue-500/70" />
+                      <span className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-500">Fotos em breve</span>
+                    </div>
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                 
                 <div className="absolute bottom-0 left-0 p-10 w-full">
@@ -629,6 +657,15 @@ function Index() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   CAPOEIRA
+                </a>
+                <a
+                  href="/muay-thai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg font-black italic uppercase tracking-tighter text-blue-500"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  MUAY THAI
                 </a>
                 <a 
                   href="/projeto-clube-escola" 
