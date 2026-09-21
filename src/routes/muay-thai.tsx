@@ -9,7 +9,6 @@ import {
   MapPin,
   MessageCircle,
   Shield,
-  Sparkles,
   Swords,
 } from "lucide-react";
 import logoAsset from "@/assets/logo.asset.json";
@@ -109,6 +108,14 @@ function MuayThai() {
 
       <main>
         <section className="relative flex min-h-[92vh] items-center overflow-hidden px-6 pb-20 pt-32">
+          <div className="absolute inset-0">
+            <img
+              src={muayThai1.url}
+              alt="Treino de Muay Thai no Cruzeirinho"
+              className="h-full w-full object-cover opacity-35"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-neutral-950/30" />
+          </div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_35%,rgba(37,99,235,0.22),transparent_36%)]" />
           <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-neutral-950 to-transparent" />
           <div className="absolute right-[-5%] top-1/3 select-none text-[7rem] font-black uppercase text-blue-500/5 md:text-[15rem]">
@@ -184,9 +191,23 @@ function MuayThai() {
                 Este espaço está preparado para receber as fotos oficiais dos treinos.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-              {[1, 2, 3, 4].map((number) => (
-                <PhotoPlaceholder key={number} number={number} />
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6">
+              {galleryPhotos.map((photo, i) => (
+                <motion.div
+                  key={photo.url}
+                  whileHover={{ y: -8, rotate: i % 2 === 0 ? 1 : -1 }}
+                  className="relative aspect-[3/4] overflow-hidden rounded-3xl border border-blue-500/25 bg-neutral-900"
+                >
+                  <img
+                    src={photo.url}
+                    alt={photo.alt}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                  <span className="absolute bottom-5 right-6 text-5xl font-black text-white/20">
+                    0{i + 1}
+                  </span>
+                </motion.div>
               ))}
             </div>
           </div>

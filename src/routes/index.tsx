@@ -20,6 +20,7 @@ import jiuJitsu1 from "@/assets/jiu-jitsu-1.png.asset.json";
 import ce1 from "@/assets/clube-escola-1.png.asset.json";
 import cruzeirinhoHeroTrophy from "@/assets/cruzeirinho-hero-trophy.png.asset.json";
 import capoeiraCard from "@/assets/capoeira-card.png.asset.json";
+import muayThaiCard from "@/assets/muay-thai-3.jpeg.asset.json";
 
 
 
