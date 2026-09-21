@@ -13,6 +13,9 @@ import {
   Swords,
 } from "lucide-react";
 import logoAsset from "@/assets/logo.asset.json";
+import muayThai1 from "@/assets/muay-thai-1.jpeg.asset.json";
+import muayThai2 from "@/assets/muay-thai-2.jpeg.asset.json";
+import muayThai3 from "@/assets/muay-thai-3.jpeg.asset.json";
 
 export const Route = createFileRoute("/muay-thai")({
   head: () => ({
@@ -59,25 +62,11 @@ const benefits = [
   },
 ];
 
-function PhotoPlaceholder({ number }: { number: number }) {
-  return (
-    <motion.div
-      whileHover={{ y: -8, rotate: number % 2 === 0 ? 1 : -1 }}
-      className="relative flex aspect-[3/4] items-center justify-center overflow-hidden rounded-3xl border border-blue-500/25 bg-neutral-900"
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.16),transparent_65%)]" />
-      <div className="relative flex flex-col items-center gap-5 px-6 text-center">
-        <Sparkles className="h-9 w-9 text-blue-500" />
-        <span className="text-xs font-black uppercase tracking-[0.2em] text-neutral-500">
-          Sua foto de Muay Thai
-        </span>
-      </div>
-      <span className="absolute bottom-5 right-6 text-5xl font-black text-white/5">
-        0{number}
-      </span>
-    </motion.div>
-  );
-}
+const galleryPhotos = [
+  { url: muayThai1.url, alt: "Treino físico da turma de Muay Thai no Cruzeirinho" },
+  { url: muayThai2.url, alt: "Atletas de Muay Thai em aula no Cruzeirinho" },
+  { url: muayThai3.url, alt: "Turma de Muay Thai do Cruzeirinho reunida após treino" },
+];
 
 function MuayThai() {
   return (
