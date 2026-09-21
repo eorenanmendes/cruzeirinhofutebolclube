@@ -215,7 +215,7 @@ function Index() {
                 icon: Shield,
                 color: "blue",
                 href: "/muay-thai",
-                img: null,
+                img: muayThaiCard.url,
               },
               { 
                 title: "PROJETO CLUBE ESCOLA", 
