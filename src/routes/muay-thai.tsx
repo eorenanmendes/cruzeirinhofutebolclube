@@ -185,10 +185,10 @@ function MuayThai() {
         <section id="galeria" className="overflow-hidden bg-neutral-900/30 px-6 py-28 md:py-32">
           <div className="mx-auto max-w-7xl">
             <div className="mb-16 text-center md:mb-20">
-              <span className="text-[10px] font-black uppercase tracking-[0.25em] text-blue-500">Em breve</span>
+              <span className="text-[10px] font-black uppercase tracking-[0.25em] text-blue-500">Nossos treinos</span>
               <h2 className="mt-4 text-5xl font-black uppercase italic md:text-8xl">Nossa Galeria</h2>
               <p className="mx-auto mt-6 max-w-2xl text-sm font-bold uppercase tracking-widest text-neutral-500">
-                Este espaço está preparado para receber as fotos oficiais dos treinos.
+                Momentos reais das aulas de Muay Thai no Cruzeirinho.
               </p>
             </div>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6">
